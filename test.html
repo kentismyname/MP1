@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Shopping Cart Example</title>
+    <style>
+        #cart-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Add your FontAwesome CDN link here -->
+    <!-- Example: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> -->
+</head>
+<body>
+    <div id="cart-icon">🛒 <span id="cart-count">⁰</span></div>
+    <button class="add-to-cart-btn">Add to Cart</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".add-to-cart-btn").click(function () {
+                // Get the position of the add to cart button
+                var buttonPosition = $(this).offset();
+
+                // Create a new element for the animation
+                var animatedElement = $("<div><i class='fas fa-cart-shopping'></i></div>").css({
+                    position: "absolute",
+                    top: buttonPosition.top + "px",
+                    left: buttonPosition.left + "px",
+                    fontSize: "45px",
+                    color: "#176B87",
+                    zIndex: 100
+                });
+
+                // Append the element to the body
+                $("body").append(animatedElement);
+
+                // Animate the element to the cart icon
+                animatedElement.animate({
+                    top: $("#cart-icon").offset().top + "px",
+                    left: $("#cart-icon").offset().left + "px",
+                    fontSize: "14px"
+                }, 1500, function () {
+                    // Remove the animated element after animation is complete
+                    $(this).remove();
+
+                    // Update the cart count and display
+                    addToCart();
+                });
+            });
+
+            // Initial cart count
+            let cartCount = 0;
+
+            // Function to update cart count
+            function updateCartCount() {
+                const cartCountElement = $("#cart-count");
+
+                if (cartCount === 0) {
+                    // If cart count is 0, hide the cart count element
+                    cartCountElement.text('⁰');
+                } else {
+                    // If cart count is greater than 0, display the cart count
+                    const countString = cartCount.toString().split('').map(digit => {
+                        return '⁰¹²³⁴⁵⁶⁷⁸⁹'[digit];
+                    }).join('');
+                    cartCountElement.text(countString);
+                }
+            }
+
+            // Function to handle "Add to Cart" button click
+            function addToCart() {
+                // Add your logic for adding items to the cart here
+                // For example, increment the cartCount
+                cartCount++;
+
+                // Update the cart count display
+                updateCartCount();
+            }
+        });
+    </script>
+</body>
+</html>

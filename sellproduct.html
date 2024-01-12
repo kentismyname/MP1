@@ -18,7 +18,7 @@
                     <li class="col col-sm-2"><a href="sellproduct.html" class="sell"><i class="fa-solid fa-bag-shopping"></i>Sell Products</a></li>
                     <li class="col col-sm-2"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i>Inventory</a></li>
                     <li class="col col-sm-1"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i>Sales History</a></li>
-                    <div class="cart-icon" id="cart-icon"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                    <div class="cart-icon" id="cart-icon"><a href="cart.html"><i class="fa-solid fa-cart-shopping"><span id="cart-count">⁰</span></i></a></div>
                     <form class="d-flex col-lg-2 col-sm-10 col-md-5 col-10">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -1522,36 +1522,68 @@
 
 <!--add to cart animation------------------------  -->
 <script>
-    $(document).ready(function() {
-      $(".add-to-cart-btn").click(function() {
-        // Get the position of the add to cart button
-        var buttonPosition = $(this).offset();
-        
-        // Create a new element for the animation
-        var animatedElement = $("<div><i class='fas fa-cart-shopping'></i></div>").css({
-          position: "absolute",
-          top: buttonPosition.top + "px",
-          left: buttonPosition.left + "px",
-          fontSize: "45px",
-          color: "#176B87",
-          zIndex: 100
+    $(document).ready(function () {
+        $(".add-to-cart-btn").click(function () {
+            // Get the position of the add to cart button
+            var buttonPosition = $(this).offset();
+
+            // Create a new element for the animation
+            var animatedElement = $("<div><i class='fas fa-cart-shopping'></i></div>").css({
+                position: "absolute",
+                top: buttonPosition.top + "px",
+                left: buttonPosition.left + "px",
+                fontSize: "45px",
+                color: "#176B87",
+                zIndex: 100
+            });
+
+            // Append the element to the body
+            $("body").append(animatedElement);
+
+            // Animate the element to the cart icon
+            animatedElement.animate({
+                top: $("#cart-icon").offset().top + "px",
+                left: $("#cart-icon").offset().left + "px",
+                fontSize: "14px"
+            }, 1500, function () {
+                // Remove the animated element after animation is complete
+                $(this).remove();
+
+                // Update the cart count and display
+                addToCart();
+            });
         });
-        
-        // Append the element to the body
-        $("body").append(animatedElement);
-        
-        // Animate the element to the cart icon
-        animatedElement.animate({
-          top: $("#cart-icon").offset().top + "px",
-          left: $("#cart-icon").offset().left + "px",
-          fontSize: "14px"
-        }, 1500, function() {
-          // Remove the animated element after animation is complete
-          $(this).remove();
-        });
-      });
+
+        // Initial cart count
+        let cartCount = 0;
+
+        // Function to update cart count
+        function updateCartCount() {
+            const cartCountElement = $("#cart-count");
+
+            if (cartCount === 0) {
+                // If cart count is 0, hide the cart count element
+                cartCountElement.text('⁰');
+            } else {
+                // If cart count is greater than 0, display the cart count
+                const countString = cartCount.toString().split('').map(digit => {
+                    return '⁰¹²³⁴⁵⁶⁷⁸⁹'[digit];
+                }).join('');
+                cartCountElement.text(countString);
+            }
+        }
+
+        // Function to handle "Add to Cart" button click
+        function addToCart() {
+            // Add your logic for adding items to the cart here
+            // For example, increment the cartCount
+            cartCount++;
+
+            // Update the cart count display
+            updateCartCount();
+        }
     });
-  </script>
+</script>
 <!-- ------------------------------------------------ -->
 <!-- Categories Script -->
 <script>
@@ -1734,6 +1766,45 @@
     }
 </script>
 <!------------------------------------------------ -->
+<!-- cart count-------------------- -->
+<script>
+    // Initial cart count
+    let cartCount = 0;
+
+    // Function to update cart count
+    function updateCartCount() {
+        const cartCountElement = document.getElementById('cart-count');
+
+        if (cartCount === 0) {
+            // If cart count is 0, hide the cart count element
+            cartCountElement.textContent = '⁰';
+        } else {
+            // If cart count is greater than 0, display the cart count
+            const countString = cartCount.toString().split('').map(digit => {
+                return '⁰¹²³⁴⁵⁶⁷⁸⁹'[digit];
+            }).join('');
+            cartCountElement.textContent = countString;
+        }
+    }
+
+    // Function to handle "Add to Cart" button click
+    function addToCart() {
+        // Add your logic for adding items to the cart here
+        // For example, increment the cartCount
+
+        // Update the cart count display after 2 seconds
+        setTimeout(function() {
+            // Call the updateCartCount function at regular intervals
+            setInterval(updateCartCount, 5000);
+        }, 5000);
+
+        // For demonstration purposes, I'm incrementing the count immediately
+        cartCount++;
+
+        // You can add your animation logic here
+    }
+</script>
+<!-- ------------------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/less" ></script>
     
 </body>
