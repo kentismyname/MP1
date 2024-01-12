@@ -1766,45 +1766,6 @@
     }
 </script>
 <!------------------------------------------------ -->
-<!-- cart count-------------------- -->
-<script>
-    // Initial cart count
-    let cartCount = 0;
-
-    // Function to update cart count
-    function updateCartCount() {
-        const cartCountElement = document.getElementById('cart-count');
-
-        if (cartCount === 0) {
-            // If cart count is 0, hide the cart count element
-            cartCountElement.textContent = '⁰';
-        } else {
-            // If cart count is greater than 0, display the cart count
-            const countString = cartCount.toString().split('').map(digit => {
-                return '⁰¹²³⁴⁵⁶⁷⁸⁹'[digit];
-            }).join('');
-            cartCountElement.textContent = countString;
-        }
-    }
-
-    // Function to handle "Add to Cart" button click
-    function addToCart() {
-        // Add your logic for adding items to the cart here
-        // For example, increment the cartCount
-
-        // Update the cart count display after 2 seconds
-        setTimeout(function() {
-            // Call the updateCartCount function at regular intervals
-            setInterval(updateCartCount, 5000);
-        }, 5000);
-
-        // For demonstration purposes, I'm incrementing the count immediately
-        cartCount++;
-
-        // You can add your animation logic here
-    }
-</script>
-<!-- ------------------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/less" ></script>
     
 </body>
