@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bb5f008548.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" type="text/css" href="assets/css/sellproducts.less" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" integrity="...">
+    <title>POS</title>
+</head>
+<body>
+    <header id="main-header" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-lg-2"><img class="logo" src="assets/img/Kenneth-logo.png"></div>
+            <div class="nav-links col-sm-10">
+                <ul class="row">
+                    <li class="col col-sm-2"><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li class="col col-sm-2"><a href="sellproduct.html" class="sell"><i class="fa-solid fa-bag-shopping"></i>Sell Products</a></li>
+                    <li class="col col-sm-2"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i>Inventory</a></li>
+                    <li class="col col-sm-1"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i>Sales History</a></li>
+                    <div class="cart-icon" id="cart-icon"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></div>
+                    <form class="d-flex col-lg-2 col-sm-10 col-md-5 col-10">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <a class="col" href="#"><i class="fa-solid fa-user"></i></a>
+                    
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="spacer"></div>
+    <section class="row mt-3">
+        <sidenav class="container-fluid col-3 bg-warning">
+            <h1>Categories</h1>
+            <ul class="list-group">
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links active-link" onclick="opentab('accesories')">Accesories</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Tires-and-Interiors')">Tires And Interiors</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Oils')">Oils & Fluids</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Seat-covers')">Seat Covers</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Hand-Grips')">Hand Grips & Throtle Cables</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Screw-and-nuts')">Screw and Nuts</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Mags-and-Rim-sets')">Mags & Rim sets</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Bulbs')">Bulbs</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Machine-parts')">Machine Parts</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Pipes')">Pipes</li>
+                <!-- <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Throtle-Cables')">None</li> -->
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Break-cables')">Break Cables & shoe</li>
+                <!-- <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Break-shoe')">None</li> -->
+            </ul>
+            <div class="cart-container" id="cartContainer">
+                <h2>Shopping Cart</h2>
+                <div id="cartContent"></div>
+                <div id="cartTotal"></div>
+            </div>
+        </sidenav>
+        <main class="container-fluid col-8 p-4">
+            <div class="tab-contents active-tab" id="accesories">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Tow Strap.jpeg">
+                        <h3>Tow Strap</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>50</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Tow Strap', 50)">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g ></g> <g id="cart"></g> </svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn"  onclick="addToCart('This is a sample', 99999)">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g ></g> <g id="cart"></g> </svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2 add-to-cart-btn">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Tires-and-Interiors">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/falcon-tire.jpeg">
+                        <h3>Falcon Tire: 45/90-17</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>720</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Falcon Tire: 45/90-17', 720)">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Oils">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Honda-oil.jpeg">
+                        <h3>Honda Premium</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>150</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Honda Premium', 150, 'assets/img/Honda-oil.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g ></g> <g id="cart"></g> </svg>
+                          </button>
+
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/Shell-oil.jpeg">
+                        <h3>Shell Advance</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>180</p>
+                        <button class="button mb-2" onclick="addToCart('Shell Advance', 180, 'assets/img/Shell-oil.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Seat-covers">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Apr seat cover.jpeg">
+                        <h3>APR Seat Cover</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>500</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('APR Seat Cover', 500, 'assets/img/Apr seat cover.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Hand-Grips">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/jrp handgrip.jpeg">
+                        <h3>JRP Hand-Grips</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>200</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('JRP Hand-Grips', 200, 'assets/img/jrp handgrip.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/Domino set.jpeg">
+                        <h3>Domino Set Grip/Cable</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>250</p>
+                        <button class="button mb-2  add-to-cart-btn" onclick="addToCart('Domino Set Grip/Cable', 250,'assets/img/Domino set.jpeg')"> 
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Screw-and-nuts">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Bolts.jpeg">
+                        <h3>Gold Bolts&Nuts</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>120</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Gold Bolts&Nuts', 120,'assets/img/Bolts.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Mags-and-Rim-sets">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Osaki rim-set.jpeg">
+                        <h3>Osaki Rim-Set</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>1700</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Osaki Rim-Set', 1700,'assets/img/Osaki rim-set.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Bulbs">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Osram Headlight.jpeg">
+                        <h3>Osram Headlight</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>120</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Osram Headlight', 120,'assets/img/Osram Headlight.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Machine-parts">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Rocker Arm Barako.jpeg">
+                        <h3>Rocker Arm-Barako</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>450</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Rocker Arm-Barako', 450,'assets/img/Rocker Arm Barako.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/Piston.jpeg">
+                        <h3>Piston</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>950</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Piston', 950, 'assets/img/Piston.jpeg')">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" id="Pipes">
+                <div class="parent-container">
+                <div class="Product-container container1">
+                    <img src="assets/img/Stock Pipe barako.jpeg">
+                    <h3>Stock Pipe-Barako</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>1120</p>
+                    <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Stock Pipe-Barako', 1120, 'assets/img/Stock Pipe barako.png')">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container2">
+                    <img src="assets/img/Daeng Sai4 Wave-Xrm.jpeg">
+                    <h3>Daeng Sai4 Wave/Xrm</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>1120</p>
+                    <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Daeng Sai4 Wave/Xrm', 1120, 'assets/img/Daeng Sai4 Wave-Xrm.jpeg')">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container3">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container4">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container5">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container6">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container7">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container8">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container9">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container10">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container11">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+                <div class="Product-container container12">
+                    <img src="assets/img/SAMPLE.jpg">
+                    <h3>This is a sample</h3>
+                    <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                    <button class="button mb-2">
+                        <span>Add to cart</span>
+                        <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                      </button>
+                </div>
+            </div></div>
+            <!-- <div class="tab-contents" id="Throtle-Cables">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="tab-contents" id="Break-cables">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/Bendix.jpeg">
+                        <h3 class="product-info">Bendix Break Shoe</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>350</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Bendix Break Shoe', 350, 'assets/img/Bendix.jpeg' )">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3 class="product-info">This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3 class="product-info">This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="tab-contents" id="Break-shoe">
+                <div class="parent-container">
+                    <div class="Product-container container1">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container2">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container3">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container4">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container5">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container6">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container7">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container8">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container9">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container10">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container11">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                    <div class="Product-container container12">
+                        <img src="assets/img/SAMPLE.jpg">
+                        <h3>This is a sample</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
+                        <button class="button mb-2">
+                            <span>Add to cart</span>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                          </button>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </main>
+    </section>
+    <footer class="container-fluid">THIS IS THE FOOTER</footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!--add to cart animation------------------------  -->
+<script>
+    $(document).ready(function() {
+      $(".add-to-cart-btn").click(function() {
+        // Get the position of the add to cart button
+        var buttonPosition = $(this).offset();
+        
+        // Create a new element for the animation
+        var animatedElement = $("<div><i class='fas fa-cart-shopping'></i></div>").css({
+          position: "absolute",
+          top: buttonPosition.top + "px",
+          left: buttonPosition.left + "px",
+          fontSize: "45px",
+          color: "#176B87",
+          zIndex: 100
+        });
+        
+        // Append the element to the body
+        $("body").append(animatedElement);
+        
+        // Animate the element to the cart icon
+        animatedElement.animate({
+          top: $("#cart-icon").offset().top + "px",
+          left: $("#cart-icon").offset().left + "px",
+          fontSize: "14px"
+        }, 1500, function() {
+          // Remove the animated element after animation is complete
+          $(this).remove();
+        });
+      });
+    });
+  </script>
+<!-- ------------------------------------------------ -->
+<!-- Categories Script -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");  
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<!-- --------------------------------------- -->
+<!-- ---------header fade effect------------ -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var header = document.getElementById('main-header');
+
+        window.onscroll = function () {
+            // Get the current scroll position
+            var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+
+            // Set the opacity based on the scroll position
+            var opacity = 1 - (scrollPos / 150); // Adjust 200 based on when you want the fading to start
+
+            // Set the opacity of the header
+            header.style.opacity = opacity;
+
+            // If the opacity is 0 or less, set display to "none"
+            if (opacity <= 0) {
+                header.style.display = 'none';
+            } else {
+                header.style.display = 'block'; // Adjust this if your header has a different display value
+            }
+        };
+    });
+</script>
+
+<!-- --------------------------------------- -->
+<!-- ---------add to cart------------------------ -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var cartTotal = 0;
+        var isDragging = false;
+        var offsetX, offsetY;
+
+        var cartContainer = document.getElementById('cartContainer');
+
+        cartContainer.addEventListener('mousedown', startDrag);
+        document.addEventListener('mouseup', endDrag);
+        document.addEventListener('mousemove', drag);
+
+        function startDrag(e) {
+            isDragging = true;
+            offsetX = e.clientX - cartContainer.getBoundingClientRect().left;
+            offsetY = e.clientY - cartContainer.getBoundingClientRect().top;
+        }
+
+        function endDrag() {
+            isDragging = false;
+        }
+
+        function drag(e) {
+            if (isDragging) {
+                cartContainer.style.left = e.clientX - offsetX + 'px';
+                cartContainer.style.top = e.clientY - offsetY + 'px';
+            }
+        }
+
+        var cartTotal = 0;
+
+        function addToCart(itemName, itemPrice, itemImage) {
+            var cartContent = document.getElementById('cartContent');
+            var cartContainer = document.getElementById('cartContainer');
+            var totalElement = document.getElementById('cartTotal');
+
+            // Check if the item is already in the cart
+            var existingCartItem = findCartItem(itemName);
+
+            if (existingCartItem) {
+                // If the item already exists, update the quantity and total price
+                updateCartItem(existingCartItem, itemPrice);
+            } else {
+                // If the item is not in the cart, create a new cart item element
+                var cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+
+                // Create a new product element for the cart
+                var cartProduct = document.createElement('div');
+                cartProduct.classList.add('cart-product');
+
+                // Add image to the cart product
+                var productImage = document.createElement('img');
+                productImage.src = itemImage;
+                cartProduct.appendChild(productImage);
+
+                // Add product name, price, and quantity to the cart product
+                cartProduct.innerHTML += `<p>${itemName} - <i class="fa-solid fa-peso-sign"></i>${itemPrice}</p>`;
+
+                // Create a quantity element for the cart item
+                var cartQuantity = document.createElement('span');
+                cartQuantity.classList.add('cart-quantity');
+                cartQuantity.innerText = '1';
+                cartProduct.appendChild(cartQuantity);
+
+                // Append the cart product to the cart item
+                cartItem.appendChild(cartProduct);
+
+                // Append the cart item to the cart content
+                cartContent.appendChild(cartItem);
+            }
+
+            // Update the total price
+            cartTotal += itemPrice;
+            totalElement.innerText = 'Total: ' + cartTotal + ' pesos';
+
+            // Show the cart container
+            cartContainer.style.display = 'block';
+
+            // Triggering reflow to apply styles before changing opacity
+            void cartContainer.offsetWidth;
+
+            // Apply fade-in effect
+            cartContainer.style.opacity = 1;
+
+            // Set a timeout to simulate a fade-out effect after 3 seconds
+            setTimeout(function () {
+                // Apply fade-out effect
+                cartContainer.style.opacity = 0;
+
+                // Set a timeout to hide the cart container after the fade-out effect
+                setTimeout(function () {
+                    cartContainer.style.display = 'none';
+                }, 500); // Assuming the fade-out transition time is 0.5 seconds
+            }, 3000); // Set the duration after which the fade-out effect will start (3 seconds in this example)
+        }
+
+        function findCartItem(itemName) {
+            var cartItems = document.querySelectorAll('.cart-item');
+
+            for (var i = 0; i < cartItems.length; i++) {
+                var productElement = cartItems[i].querySelector('.cart-product p');
+                if (productElement && productElement.innerText.includes(itemName)) {
+                    return cartItems[i];
+                }
+            }
+
+            return null;
+        }
+
+        function updateCartItem(cartItem, itemPrice) {
+            var quantityElement = cartItem.querySelector('.cart-quantity');
+            if (quantityElement) {
+                // Update the quantity if the element exists
+                var currentQuantity = parseInt(quantityElement.innerText);
+                quantityElement.innerText = (currentQuantity + 1).toString();
+            }
+
+            // Update the total price
+            cartTotal += itemPrice;
+            document.getElementById('cartTotal').innerText = 'Total: ' + cartTotal + ' pesos';
+        }
+    });
+</script>
+
+<!-- -------------------------------------------- -->
+<!-----------------hover sound effects---------------->
+<script>
+    // Create an audio element
+    var hoverSound = new Audio('assets/Sound/button-sound-effect.mp3'); // Replace with the path to your sound file
+    hoverSound.playbackRate = 7;
+ 
+    function playHoverSound() {
+        // Play the sound on hover
+        hoverSound.play();
+    }
+</script>
+<!------------------------------------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    
+</body>
+</html>
