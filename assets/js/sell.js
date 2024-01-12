@@ -59,7 +59,7 @@ function opentab(tabname) {
 
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
-}
+};
 
 // Header fade effect script
 document.addEventListener('DOMContentLoaded', function () {
@@ -81,35 +81,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Add to cart script
 document.addEventListener('DOMContentLoaded', function () {
-    var cartTotal = 0;
-    var isDragging = false;
-    var offsetX, offsetY;
-    var cartContainer = document.getElementById('cartContainer');
-
-    cartContainer.addEventListener('mousedown', startDrag);
-    document.addEventListener('mouseup', endDrag);
-    document.addEventListener('mousemove', drag);
-
-    function startDrag(e) {
-        isDragging = true;
-        offsetX = e.clientX - cartContainer.getBoundingClientRect().left;
-        offsetY = e.clientY - cartContainer.getBoundingClientRect().top;
-    }
-
-    function endDrag() {
-        isDragging = false;
-    }
-
-    function drag(e) {
-        if (isDragging) {
-            cartContainer.style.left = e.clientX - offsetX + 'px';
-            cartContainer.style.top = e.clientY - offsetY + 'px';
-        }
-    }
-
     function addToCart(itemName, itemPrice, itemImage) {
         var cartContent = document.getElementById('cartContent');
-        var cartContainer = document.getElementById('cartContainer');
+        var cartContainer = document.getElementById('sidemenu');
         var totalElement = document.getElementById('cartTotal');
 
         var existingCartItem = findCartItem(itemName);

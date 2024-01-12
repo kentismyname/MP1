@@ -3,175 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart Example</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Include Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <style>
-        #cartContainer {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 300px;
-            padding: 10px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
+    <link rel="stylesheet" href="assets/css/test.less">
+    <script src="https://kit.fontawesome.com/bb5f008548.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" type="text/css" href="assets/css/sellproducts.less" />
 
-        .cart-item {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
-        }
-
-        .cart-product {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .cart-quantity {
-            margin-left: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-Zd5UvY+To0IUFAIiNTrq80U1tTcCySdxd3OGwpi+TpkhHqDBXXL4xnEoYSz1jdoFlgsF7P9Vb+14DAN1a3c1dKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Your Website</title>
 </head>
+<style>
+    nav ul {
+    background: rgb(210, 6, 6);
+    background: radial-gradient(circle, rgba(210, 6, 6, 1) 26%, rgba(17, 12, 12, 1) 88%);
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 150px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+}
+
+nav ul .fas {
+    position: absolute;
+    top: 25px;
+    left: 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+}
+
+</style>
 <body>
-    <!-- Add your existing HTML content here -->
-
-    <div id="cartContainer">
-        <h2>Your Cart</h2>
-        <div id="cartContent"></div>
-        <div id="cartTotal">Total: 0 pesos</div>
-    </div>
-
+    <nav>
+        <ul id="sidemenu" class="list-unstyled">
+            <li class="d-inline me-3"><a href="#" class="link text-decoration-none spacer">About</a></li>
+            <li class="d-inline me-3"><a href="#" class="link text-decoration-none spacer">Services</a></li>
+            <li class="d-inline me-3"><a href="#" class="link text-decoration-none spacer">Portfolio</a></li>
+            <li class="d-inline me-3"><a href="#" class="link text-decoration-none spacer">Contact</a></li>
+            <li class="d-inline me-3"><i class="fas fa-times" onclick="closemenu()"></i></li>
+        </ul>
+        <i class="fas fa-bars" onclick="openmenu()"></i>
+    </nav>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var cartTotal = 0;
-            var isDragging = false;
-            var offsetX, offsetY;
-
-            var cartContainer = document.getElementById('cartContainer');
-
-            cartContainer.addEventListener('mousedown', startDrag);
-            document.addEventListener('mouseup', endDrag);
-            document.addEventListener('mousemove', drag);
-
-            function startDrag(e) {
-                isDragging = true;
-                offsetX = e.clientX - cartContainer.getBoundingClientRect().left;
-                offsetY = e.clientY - cartContainer.getBoundingClientRect().top;
-            }
-
-            function endDrag() {
-                isDragging = false;
-            }
-
-            function drag(e) {
-                if (isDragging) {
-                    cartContainer.style.left = e.clientX - offsetX + 'px';
-                    cartContainer.style.top = e.clientY - offsetY + 'px';
-                }
-            }
-
-            function addToCart(itemName, itemPrice, itemImage) {
-                var cartContent = document.getElementById('cartContent');
-                var cartContainer = document.getElementById('cartContainer');
-                var totalElement = document.getElementById('cartTotal');
-
-                // Check if the item is already in the cart
-                var existingCartItem = findCartItem(itemName);
-
-                if (existingCartItem) {
-                    // If the item already exists, update the quantity and total price
-                    updateCartItem(existingCartItem, itemPrice);
-                } else {
-                    // If the item is not in the cart, create a new cart item element
-                    var cartItem = document.createElement('div');
-                    cartItem.classList.add('cart-item');
-
-                    // Create a new product element for the cart
-                    var cartProduct = document.createElement('div');
-                    cartProduct.classList.add('cart-product');
-
-                    // Add image to the cart product
-                    var productImage = document.createElement('img');
-                    productImage.src = itemImage;
-                    cartProduct.appendChild(productImage);
-
-                    // Add product name, price, and quantity to the cart product
-                    cartProduct.innerHTML += `<p>${itemName} - <i class="fa-solid fa-peso-sign"></i>${itemPrice}</p>`;
-
-                    // Create a quantity element for the cart item
-                    var cartQuantity = document.createElement('span');
-                    cartQuantity.classList.add('cart-quantity');
-                    cartQuantity.innerText = '1';
-                    cartProduct.appendChild(cartQuantity);
-
-                    // Append the cart product to the cart item
-                    cartItem.appendChild(cartProduct);
-
-                    // Append the cart item to the cart content
-                    cartContent.appendChild(cartItem);
-                }
-
-                // Update the total price
-                cartTotal += itemPrice;
-                totalElement.innerText = 'Total: ' + cartTotal + ' pesos';
-
-                // Show the cart container
-                cartContainer.style.display = 'block';
-
-                // Triggering reflow to apply styles before changing opacity
-                void cartContainer.offsetWidth;
-
-                // Apply fade-in effect
-                cartContainer.style.opacity = 1;
-
-                // Set a timeout to simulate a fade-out effect after 3 seconds
-                setTimeout(function () {
-                    // Apply fade-out effect
-                    cartContainer.style.opacity = 0;
-
-                    // Set a timeout to hide the cart container after the fade-out effect
-                    setTimeout(function () {
-                        cartContainer.style.display = 'none';
-                    }, 500); // Assuming the fade-out transition time is 0.5 seconds
-                }, 3000); // Set the duration after which the fade-out effect will start (3 seconds in this example)
-            }
-
-            function findCartItem(itemName) {
-                var cartItems = document.querySelectorAll('.cart-item');
-
-                for (var i = 0; i < cartItems.length; i++) {
-                    var productElement = cartItems[i].querySelector('.cart-product p');
-                    if (productElement && productElement.innerText.includes(itemName)) {
-                        return cartItems[i];
-                    }
-                }
-
-                return null;
-            }
-
-            function updateCartItem(cartItem, itemPrice) {
-                var quantityElement = cartItem.querySelector('.cart-quantity');
-                if (quantityElement) {
-                    // Update the quantity if the element exists
-                    var currentQuantity = parseInt(quantityElement.innerText);
-                    quantityElement.innerText = (currentQuantity + 1).toString();
-                }
-
-                // Update the total price
-                cartTotal += itemPrice;
-                document.getElementById('cartTotal').innerText = 'Total: ' + cartTotal + ' pesos';
-            }
-
-            // Example usage:
-            addToCart("Item 1", 50, "item1.jpg");
-            addToCart("Item 2", 30, "item2.jpg");
-        });
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <script src="assets/js/sell.js"></script>
 </body>
 </html>
+    

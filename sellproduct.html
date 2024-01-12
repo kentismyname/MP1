@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bb5f008548.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet/less" type="text/css" href="assets/css/sellproducts.less" />
+    <link rel="stylesheet/less" type="text/css" href="assets/css/sellproducts.less"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" integrity="...">
     <title>POS</title>
 </head>
@@ -18,7 +18,7 @@
                     <li class="col col-sm-2"><a href="sellproduct.html" class="sell"><i class="fa-solid fa-bag-shopping"></i>Sell Products</a></li>
                     <li class="col col-sm-2"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i>Inventory</a></li>
                     <li class="col col-sm-1"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i>Sales History</a></li>
-                    <div class="cart-icon" id="cart-icon"><a href="cart.html"><i class="fa-solid fa-cart-shopping"><span id="cart-count">⁰</span></i></a></div>
+                    <div class="cart-icon" id="cart-icon" onclick="openmenu()"><i class="fa-solid fa-cart-shopping"><span id="cart-count">⁰</span></i></div>
                     <form class="d-flex col-lg-2 col-sm-10 col-md-5 col-10">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -30,6 +30,14 @@
         </div>
     </header>
     <div class="spacer"></div>
+    <nav>
+        <div id="sidemenu" class="cart-container">
+                <h2>Shopping Cart</h2>
+                <div id="cartContent"></div>
+                <div id="cartTotal"></div>
+                <i class="fas fa-times" onclick="closemenu()">
+        </div>
+    </nav>
     <section class="row mt-3">
         <sidenav class="container-fluid col-3 bg-warning">
             <h1>Categories</h1>
@@ -1515,6 +1523,15 @@
         </main>
     </section>
     <footer class="container-fluid">THIS IS THE FOOTER</footer>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){ 
+            sidemenu.style.right = "-250px";
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/less" ></script>
     <script src="assets/js/sell.js"></script>
