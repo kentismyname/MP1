@@ -7,28 +7,24 @@
 
 *{
     // outline: 2px solid red;
-    // padding: 0;
-    // margin: 0;
     font-family: 'Times New Roman', Times, serif;
     body{
         header{
             background-color: #EEF5FF;
             position: fixed;
             z-index: 2;
-            // margin-top: -16px;
             .logo{
                 width: 50%;
                 min-width: 100px;
                 margin:20px 0 0px 85px;
+                // box-shadow: 7px 5px 8px rgba(0, 0, 0, 0.2);
             }
             .nav-links{
-                // margin: 60px 0 0 0px;
                 padding: 40px 0 0 0;                
                 ul{
                     list-style: none;
                     li{
                         display: inline-block;
-                        // margin-right: 15px;
                         min-width: 150px;
                         a{
                             color: black;
@@ -44,7 +40,7 @@
                                 content: '';
                                 display: block;
                                 width: 100%;
-                                height: 4px; /* Adjust this value for the desired width */
+                                height: 4px;
                                 background-color: var(--main-color);
                                 position: absolute;
                                 bottom: 1;
@@ -76,20 +72,58 @@
             }
         }
         nav .cart-container {
-            // background: rgb(210, 6, 6);
             background: var(--dark-color);
             position: fixed;
             top: 0;
             margin-top: 90px;
-            right: -550px;
-            width: 550px;
+            right: -850px;
+            width: 850px;
             height: 1000px;
             padding-top: 50px;
             z-index: 2;
             transition: right 0.5s;
             border-radius: 15px;
-            .cart-item img{
-                width: 20%;
+            // display: inline-block;
+            .cart-item{
+                display: flex;
+                /* border: solid 1px var(--dark-color); */
+                margin: 10px;
+                background: var(--primary-color);
+                .cart-product{
+                    display: flex;
+                    align-items: flex-end;
+                    img{
+                        max-width: 20%;
+                    }
+                    p{
+                        font-size: 24px;
+                        font-weight: bold;
+                        display: inline;
+                        text-align: middle;
+                        margin-left: 10px;
+                    }
+                    .remove-btn{
+                        color: red;
+                        background: none;
+                        border: none;
+                        font-size: 20px;
+                        margin: 0 0 18px 20px;
+                    
+                    }
+                }
+                .quantity-buttons{
+                    display: flex;
+                    height: 28px;
+                    justify-content: space-between;
+                    margin-top: 40px;
+                    .quantity-btn{
+                        margin-right: 10px;
+                        background-color: var(--main-color);
+                        border: solid .5px black;
+                        border-radius: 5px;
+                    }
+                    
+                }
             }
             #cartTotal {
                 margin-top: 10px;
@@ -122,32 +156,11 @@
                         font-size: 25px;
                     }
                 }
-        
                 img {
                     max-width: 100%;
                     height: auto;
                 }        
-            }
-            // main{
-            //     .parent-container{
-                    
-            //     }
-            //     .Product-container {
-            //         text-align: center;
-            //         // margin: 20px;
-            //         max-width: 290px;
-            //         .product-info{
-            //             max-height: 1.2em; /* Adjust the height as needed */
-            //             overflow: hidden;
-            //             white-space: nowrap;
-            //             text-overflow: ellipsis;
-            //             width: 100%;
-            //             padding: 0 20px 0 20px;
-            //         }
-            //     }
-            // }
-             
-            
+            }  
             .tab-contents{
                 display: none;
             }
@@ -159,7 +172,6 @@
                 font-size: 25px;
             }
             main{
-                // background-color: var(--main-color);
                 background: linear-gradient(0deg, rgba(23,107,135,1) 6%, rgba(180,212,255,1) 91%);
 
                 border-radius: 10px;
@@ -173,24 +185,29 @@
                     text-align: center;
                     .Product-container{
                         text-align: center;
-                        // display: flex;
                         background-color: var(--primary-color);
                         padding-top: 10px;
                         border-radius: 15px;
                         border: solid 1px;
                         transition: 0.3s ease;
                         max-width: 290px;
-                        // justify-content: center;
                         img{
                             width: 90%;
                         }
                         .product-name{
-                            // max-height: 1.2em; /* Adjust the height as needed */
                             overflow: hidden;
                             white-space: nowrap;
                             text-overflow: ellipsis;
                             width: 100%;
                             padding: 0 20px 0 20px;
+                        }
+                        .custom-carousel-control {
+                            color: black; 
+                            border: none; 
+                        }
+                        
+                        .custom-carousel-control:hover {
+                            background-color: darkgrey;
                         }
                     }
                     .Product-container:hover{
