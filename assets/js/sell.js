@@ -79,78 +79,88 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 });
 
+
+
 // Add to cart script
-document.addEventListener('DOMContentLoaded', function () {
+var cartItems = [];
+    var cartTotal = 0;
+
     function addToCart(itemName, itemPrice, itemImage) {
-        var cartContent = document.getElementById('cartContent');
-        var cartContainer = document.getElementById('sidemenu');
-        var totalElement = document.getElementById('cartTotal');
+        var existingItem = cartItems.find(function (item) {
+            return item.name === itemName;
+        });
 
-        var existingCartItem = findCartItem(itemName);
-
-        if (existingCartItem) {
-            updateCartItem(existingCartItem, itemPrice);
+        if (existingItem) {
+            existingItem.quantity += 1;
         } else {
-            var cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
+            cartItems.push({
+                name: itemName,
+                price: itemPrice,
+                image: itemImage,
+                quantity: 1
+            });
+        }
 
-            var cartProduct = document.createElement('div');
-            cartProduct.classList.add('cart-product');
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        var cartContent = document.getElementById('cartContent');
+        var cartTotalElement = document.getElementById('cartTotal');
+
+        cartContent.innerHTML = '';
+
+        cartItems.forEach(function (item) {
+            var cartItemDiv = document.createElement('div');
+            cartItemDiv.classList.add('cart-item');
+
+            var cartProductDiv = document.createElement('div');
+            cartProductDiv.classList.add('cart-product');
 
             var productImage = document.createElement('img');
-            productImage.src = itemImage;
-            cartProduct.appendChild(productImage);
+            productImage.src = item.image;
+            cartProductDiv.appendChild(productImage);
 
-            cartProduct.innerHTML += `<p>${itemName} - <i class="fa-solid fa-peso-sign"></i>${itemPrice}</p>`;
+            cartProductDiv.innerHTML += `<p>${item.name} - <i class="fa-solid fa-peso-sign"></i>${item.price} x ${item.quantity}</p>`;
 
-            var cartQuantity = document.createElement('span');
-            cartQuantity.classList.add('cart-quantity');
-            cartQuantity.innerText = '1';
-            cartProduct.appendChild(cartQuantity);
+            var quantityButtonsDiv = document.createElement('div');
+            quantityButtonsDiv.classList.add('quantity-buttons');
 
-            cartItem.appendChild(cartProduct);
-            cartContent.appendChild(cartItem);
-        }
+            var increaseButton = document.createElement('button');
+            increaseButton.classList.add('quantity-btn');
+            increaseButton.innerText = '+';
+            increaseButton.onclick = function () {
+                item.quantity += 1;
+                updateCartDisplay();
+            };
+            quantityButtonsDiv.appendChild(increaseButton);
 
-        cartTotal += itemPrice;
-        totalElement.innerText = 'Total: ' + cartTotal + ' pesos';
+            var decreaseButton = document.createElement('button');
+            decreaseButton.classList.add('quantity-btn');
+            decreaseButton.innerText = '-';
+            decreaseButton.onclick = function () {
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                    updateCartDisplay();
+                }
+            };
+            quantityButtonsDiv.appendChild(decreaseButton);
 
+            cartItemDiv.appendChild(cartProductDiv);
+            cartItemDiv.appendChild(quantityButtonsDiv);
+
+            cartContent.appendChild(cartItemDiv);
+        });
+
+        cartTotal = cartItems.reduce(function (total, item) {
+            return total + item.price * item.quantity;
+        }, 0);
+
+        cartTotalElement.innerText = 'Total: ' + cartTotal + ' pesos';
+
+        var cartContainer = document.getElementById('cartContainer');
         cartContainer.style.display = 'block';
-        void cartContainer.offsetWidth;
-        cartContainer.style.opacity = 1;
-
-        setTimeout(function () {
-            cartContainer.style.opacity = 0;
-            setTimeout(function () {
-                cartContainer.style.display = 'none';
-            }, 500);
-        }, 3000);
-    }
-
-    function findCartItem(itemName) {
-        var cartItems = document.querySelectorAll('.cart-item');
-
-        for (var i = 0; i < cartItems.length; i++) {
-            var productElement = cartItems[i].querySelector('.cart-product p');
-            if (productElement && productElement.innerText.includes(itemName)) {
-                return cartItems[i];
-            }
-        }
-
-        return null;
-    }
-
-    function updateCartItem(cartItem, itemPrice) {
-        var quantityElement = cartItem.querySelector('.cart-quantity');
-        if (quantityElement) {
-            var currentQuantity = parseInt(quantityElement.innerText);
-            quantityElement.innerText = (currentQuantity + 1).toString();
-        }
-
-        cartTotal += itemPrice;
-        document.getElementById('cartTotal').innerText = 'Total: ' + cartTotal + ' pesos';
-    }
-});
+    };
 
 // Hover sound effect script
 var hoverSound = new Audio('assets/Sound/button-sound-effect.mp3');
