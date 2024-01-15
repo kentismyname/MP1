@@ -1,17 +1,35 @@
-var carouselInner = document.querySelector('#HomeProductSlide .carousel-inner');
+var carouselInner1 = document.querySelector('#HomeProductSlide1 .carousel-inner');
 
-var intervalId = setInterval(function () {
-    var currentActiveItem = carouselInner.querySelector('.carousel-item.active');
+var intervalId1 = setInterval(function () {
+    var currentActiveItem = carouselInner1.querySelector('.carousel-item.active');
     currentActiveItem.classList.remove('active');
 
-    var nextItem = currentActiveItem.nextElementSibling || carouselInner.firstElementChild;
+    var nextItem = currentActiveItem.nextElementSibling || carouselInner1.firstElementChild;
     nextItem.classList.add('active');
 }, 5000);
 
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        clearInterval(intervalId);
+        clearInterval(intervalId1);
     } else {
-        intervalId = setInterval(/* ... */);
+        intervalId1 = setInterval(/* ... */);
+    }
+});
+
+var carouselInner2 = document.querySelector('#HomeProductSlide2 .carousel-inner');
+
+var intervalId2 = setInterval(function () {
+    var currentActiveItem = carouselInner2.querySelector('.carousel-item.active');
+    currentActiveItem.classList.remove('active');
+
+    var nextItem = currentActiveItem.nextElementSibling || carouselInner2.firstElementChild;
+    nextItem.classList.add('active');
+}, 5000);
+
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        clearInterval(intervalId2);
+    } else {
+        intervalId2 = setInterval(/* ... */);
     }
 });
