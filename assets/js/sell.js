@@ -207,12 +207,7 @@ function processPayment() {
 
     // Calculate change
     var change = totalPayment - cartTotal;
-
-    // Clear cart items
-    cartItems = [];
-
-    // Update cart display
-    updateCartDisplay();
+    
 
     // Update modal content
     document.getElementById('totalCost').innerText = 'Total Cost: ' + cartTotal;
@@ -244,17 +239,56 @@ function closePaymentModal() {
 }
 
 function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPayment, change) {
+    // Generate a unique transaction ID for the QR code (replace this with your actual logic)
+    var transactionId = generateUniqueTransactionId();
+
     var receiptContent = `
-        <h2>Receipt</h2>
-        <p><strong>Customer Name:</strong> ${customerName}</p>
-        <p><strong>Loyalty Card Number:</strong> ${loyaltyCardNumber}</p>
-        <p><strong>Total Cost:</strong> ${totalCost}</p>
-        <p><strong>Total Payment:</strong> ${totalPayment}</p>
-        <p><strong>Change:</strong> ${change}</p>
+        <div style="border: 2px solid #000; border-radius: 10px; padding: 20px; max-width: 400px; margin: 0 auto; background-color: #fff; color: #000; text-align: left; font-family: 'Arial', sans-serif;">
+            <img src="assets/img/kenneth-logo.png" style="max-width: 40%; display: block; margin: 0 auto; margin-bottom: 15px;">
+            <h2 style="color: #000; font-size: 26px; margin-bottom: 15px; font-weight: bold; text-align: center;">Kenneth's Moto Parts Shop and Services</h2>
+            <p style="margin-bottom: 8px;"><strong>Customer Name:</strong> ${customerName}</p>
+            <p style="margin-bottom: 8px;"><strong>Loyalty Card Number:</strong> ${loyaltyCardNumber}</p>
+            <p style="margin-bottom: 8px;"><strong>Total Cost:</strong> <span style="color: #000; font-weight: bold;">${totalCost}</span></p>
+            <p style="margin-bottom: 8px;"><strong>Total Payment:</strong> <span style="color: #000; font-weight: bold;">${totalPayment}</span></p>
+            <p style="margin-bottom: 15px;"><strong>Change:</strong> <span style="color: #000; font-weight: bold;">${change}</span></p>
+            
+            <h4 style="margin-top: 15px; color: #000; font-size: 20px; font-weight: bold; text-align: center;">Products</h4>
+    `;
+
+    // Include details of each item in the receipt under the "Products" section
+    cartItems.forEach(function (item) {
+        receiptContent += `
+            <p style="color: #000; margin-bottom: 8px;">${item.name} - ${item.quantity} = ${item.price * item.quantity}</p>
+        `;
+    });
+
+    receiptContent += `
+            <hr style="border: 1px dashed #000; margin: 20px 0;">
+            <p style="font-size: 16px; color: #000; text-align: center;">Thank you for your purchase! We appreciate your trust in Kenneth's Moto Parts Shop and Services. Please come again!</p>
+            <div style="margin-top: 20px; text-align: center;">
+                <!-- Placeholder for QR code image, replace 'QR_CODE_URL' with your actual QR code URL -->
+                <img src="assets/img/QRcode.png" alt="Receipt QR Code" style="max-width: 30%;">
+            </div>
+            <p style="font-size: 14px; color: #000; margin-top: 10px; text-align: center;">Scan the QR code for receipt confirmation.</p>
+        </div>
     `;
 
     return receiptContent;
 }
+
+
+
+
+
+
+
+// Replace this function with your actual logic to generate a unique transaction ID for the QR code
+function generateUniqueTransactionId() {
+    // Implement your logic to generate a unique transaction ID
+    // For simplicity, you can use a timestamp or any other unique identifier
+    return Date.now().toString();
+}
+
 
 
 // Hover sound effect script

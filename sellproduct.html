@@ -52,23 +52,28 @@
                 <form id="paymentForm">
                     <!-- Your form content -->
                     <label for="customerName">Customer Name:</label>
-                    <input type="text" id="customerName" name="customerName" required><br>
-
+                    <input type="text" id="customerName" name="customerName" required autocomplete="off"><br>
+                
                     <label for="loyaltyCardNumber">Loyalty Card Number:</label>
-                    <input type="text" id="loyaltyCardNumber" name="loyaltyCardNumber" required>
-
+                    <input type="text" id="loyaltyCardNumber" name="loyaltyCardNumber" required autocomplete="off">
+                
                     <label for="totalPayment">Total Payment:</label>
-                    <input type="number" id="totalPayment" name="totalPayment" required>
-
+                    <input type="number" id="totalPayment" name="totalPayment" required autocomplete="off">
+                
                     <p><span id="totalCost"></span></p>
-
+                
                     <button type="button" onclick="processPayment()">Submit Payment</button>
-                </form>
+                </form>                
                 <div id="receiptContent"></div>
 
             </div>
         </div>
     </div>
+    <div id="receiptContainer">
+        <div id="receiptContent"></div>
+        <!-- <button onclick="closeReceipt()">Close Receipt</button> -->
+    </div>
+    
     <section class="row mt-3">
         <sidenav class="container-fluid col-3 bg-warning">
             <h1>Categories</h1>
@@ -707,23 +712,43 @@
                         <img src="assets/img/Shell-oil.jpeg">
                         <h3>Shell Advance</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>180</p>
-                        <button class="button mb-2" onclick="addToCart('Shell Advance', 180, 'assets/img/Shell-oil.jpeg')">
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Shell Advance', 180, 'assets/img/Shell-oil.jpeg')">
                             <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g><g id="cart"></g></svg>
                           </button>
 
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
+                        <div id="yamalube" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="assets/img/yamalube.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/yamalube2.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/yamalube3.jpeg" class="w-90" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#yamalube" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#yamalube" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        <h3 class="product-name">Yamalube Gear Oil 100ML</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>100</p>
+                        <button class="button mb-2 add=to-cart-btn" onclick="addToCart('Yamalube Gear Oil 100ML',100, 'assets/img/yamalube.jpeg')">
                             <span>Add to cart</span>
                             <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -732,7 +757,7 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -741,7 +766,7 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -750,7 +775,7 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -759,7 +784,7 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -768,7 +793,7 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -777,7 +802,7 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -786,7 +811,7 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -795,7 +820,7 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -809,7 +834,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Apr seat cover.jpeg">
-                        <h3>APR Seat Cover</h3>
+                        <h3>APR</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>500</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('APR Seat Cover', 500, 'assets/img/Apr seat cover.jpeg')">
                             <span>Add to cart</span>
@@ -817,34 +842,106 @@
                           </button>
                     </div>
                     <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
+                        <div id="jrpseatcovers" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="assets/img/jrpseatcover.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/jrpseatcover2.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/jrpseatcover3.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/jrpseatcover4.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/jrpseatcover5.jpeg" class="w-90" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#jrpseatcovers" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#jrpseatcovers" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        <h3>JRP</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>250</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('JRP Seat Cover',250, 'assets/img/jrpseatcover.jpeg')">
                             <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g><g id="cart"></g></svg>
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
+                        <div id="kawasakiseatcovers" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="assets/img/kawasakiseatcover.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/kawasakiseatcover2.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/kawasakiseatcover3.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/kawasakiseatcover3.jpeg" class="w-90" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#kawasakiseatcovers" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#kawasakiseatcovers" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        <h3>Kawasaki</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>120</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Kawasaki Seat Cover',120, 'assets/img/kawasakiseatcover.jpeg')">
                             <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g><g id="cart"></g></svg>
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
+                        <div id="hondaseatcovers" class="carousel slide">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <img src="assets/img/Hondaseatcover.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/Hondaseatcover2.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/Hondaseatcover3.jpeg" class="w-90" alt="...">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="assets/img/Hondaseatcover4.jpeg" class="w-90" alt="...">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hondaseatcovers" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#hondaseatcovers" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        <h3>Honda</h3>
+                        <p><i class="fa-solid fa-peso-sign"></i>250</p>
+                        <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Honda Seat Cover',250, 'assets/img/Hondaseatcover.jpeg')">
                             <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g> <g id="cart"></g></svg>
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -853,7 +950,7 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -862,7 +959,7 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -871,7 +968,7 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -880,7 +977,7 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -889,7 +986,7 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -898,7 +995,7 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -907,7 +1004,7 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
+                        <img src="assets/img/out-of-stock.jpg">
                         <h3>This is a sample</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
@@ -925,8 +1022,8 @@
                         <p><i class="fa-solid fa-peso-sign"></i>200</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('JRP Hand-Grips', 200, 'assets/img/jrp handgrip.jpeg')">
                             <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
+                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g><g id="cart"></g></svg>
+                        </button>
                     </div>
                     <div class="Product-container container2">
                         <img src="assets/img/Domino set.jpeg">
