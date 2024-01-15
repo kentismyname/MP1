@@ -244,14 +244,15 @@ function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPaymen
 
     var receiptContent = `
         <div style="border: 2px solid #000; border-radius: 10px; padding: 20px; max-width: 400px; margin: 0 auto; background-color: #fff; color: #000; text-align: left; font-family: 'Arial', sans-serif;">
-            <img src="kenneth-logo.png" alt="LOGO" style="max-width: 40%; display: block; margin: 0 auto; margin-bottom: 15px;">
+        <div style="margin-top: 20px; text-align: center;">
+            <img src="assets/img/kenneth-logo.png" alt="Receipt QR Code" style="max-width: 30%;">
+        </div>
             <h2 style="color: #000; font-size: 26px; margin-bottom: 15px; font-weight: bold; text-align: center;">Kenneth's Moto Parts Shop and Services</h2>
             <p style="margin-bottom: 8px;"><strong>Customer Name:</strong> ${customerName}</p>
             <p style="margin-bottom: 8px;"><strong>Loyalty Card Number:</strong> ${loyaltyCardNumber}</p>
             <p style="margin-bottom: 8px;"><strong>Total Cost:</strong> <span style="color: #000; font-weight: bold;">${totalCost}</span></p>
             <p style="margin-bottom: 8px;"><strong>Total Payment:</strong> <span style="color: #000; font-weight: bold;">${totalPayment}</span></p>
             <p style="margin-bottom: 15px;"><strong>Change:</strong> <span style="color: #000; font-weight: bold;">${change}</span></p>
-            
             <h4 style="margin-top: 15px; color: #000; font-size: 20px; font-weight: bold; text-align: center;">Products</h4>
     `;
 
