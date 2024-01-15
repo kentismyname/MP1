@@ -43,7 +43,7 @@
             <th>Total Price</th>
             <th>Date</th>
             <th>Time</th>
-            <th>Action</th> <!-- New column for the "Return" button -->
+            <th>Action</th> 
         </tr>
     </thead>
     <tbody>
@@ -53,30 +53,30 @@
             <td>Tow Strap</td>
             <td>2</td>
             <td><i class="fa-solid fa-peso-sign"></i>50</td>
-            <td id="totalPrice1">100</td> <!-- Display total price -->
+            <td id="totalPrice1">100</td>
             <td>January 15, 2024</td>
             <td>14:30:00 PM</td>
-            <td><button onclick="returnProduct(1)">Return</button></td> <!-- Return button -->
+            <td><button onclick="returnProduct(1)">Return</button></td>
         </tr>
         <tr>
             <td class="image"><img src="assets/img/Cross-bar.jpeg" class="w-5" alt="Crossbar Bracket"></td>
             <td>Crossbar Bracket</td>
             <td>1</td>
             <td><i class="fa-solid fa-peso-sign"></i>120</td>
-            <td id="totalPrice2">120</td> <!-- Display total price -->
+            <td id="totalPrice2">120</td>
             <td>January 16, 2024</td>
             <td>09:45:00 AM</td>
-            <td><button onclick="returnProduct(2)">Return</button></td> <!-- Return button -->
+            <td><button onclick="returnProduct(2)">Return</button></td>
         </tr>
         <tr>
             <td class="image"><img src="assets/img/2-way-alarm.jpeg" class="w-5" alt="3 Way Alarm"></td>
             <td>3 Way Alarm</td>
             <td>3</td>
             <td><i class="fa-solid fa-peso-sign"></i>550</td>
-            <td id="totalPrice3">1650</td> <!-- Display total price -->
+            <td id="totalPrice3">1650</td> 
             <td>January 17, 2024</td>
             <td>18:15:00 PM</td>
-            <td><button onclick="returnProduct(3)">Return</button></td> <!-- Return button -->
+            <td><button onclick="returnProduct(3)">Return</button></td> 
         </tr>
     </tbody>
 </table>
@@ -89,7 +89,6 @@
         function returnProduct(itemId) {
             console.log("Return button clicked for item:", itemId);
 
-            // Add your logic for handling product returns here
             var totalPriceElement = document.getElementById("totalPrice" + itemId);
 
             if (totalPriceElement) {
@@ -111,7 +110,6 @@
         }
 
         function closeModal() {
-            // Close the custom modal
             var modal = document.querySelector('.custom-modal');
             if (modal) {
                 modal.style.display = 'none';
@@ -125,20 +123,19 @@
             var header = document.getElementById('main-header');
     
             window.onscroll = function () {
-                // Get the current scroll position
+
                 var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
     
-                // Set the opacity based on the scroll position
-                var opacity = 1 - (scrollPos / 150); // Adjust 200 based on when you want the fading to start
+                var opacity = 1 - (scrollPos / 150); 
     
-                // Set the opacity of the header
+
                 header.style.opacity = opacity;
     
-                // If the opacity is 0 or less, set display to "none"
+
                 if (opacity <= 0) {
                     header.style.display = 'none';
                 } else {
-                    header.style.display = 'block'; // Adjust this if your header has a different display value
+                    header.style.display = 'block';
                 }
             };
         });
