@@ -126,16 +126,9 @@ function updateCartDisplay() {
         var productInfo = document.createElement('p');
         productInfo.innerHTML = `${item.name} - <i class="fa-solid fa-peso-sign"></i>${item.price} x ${item.quantity} = ${item.price * item.quantity} `;
         
-        var removeButton = document.createElement('button');
-        removeButton.classList.add('remove-btn');
-        removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        removeButton.onclick = function () {
-            removeFromCart(item.name); 
-            updateCartCount();
-        };
+        
 
         cartProductDiv.appendChild(productInfo);
-        cartProductDiv.appendChild(removeButton);
 
         var quantityButtonsDiv = document.createElement('div');
         quantityButtonsDiv.classList.add('quantity-buttons');
@@ -158,17 +151,16 @@ function updateCartDisplay() {
                 updateCartDisplay();
             }
         };
-        // var removeButton = document.createElement('button');
-        // removeButton.classList.add('remove-btn');
-        // removeButton.innerText = 'Remove';
-        // removeButton.onclick = function () {
-        //     removeFromCart(item.name);
-        //     updateCartCount();
-        //     updateCartDisplay();
-
-        // };
-
         quantityButtonsDiv.appendChild(decreaseButton);
+
+        var removeButton = document.createElement('button');
+        removeButton.classList.add('remove-btn');
+        removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
+        removeButton.onclick = function () {
+            removeFromCart(item.name); 
+            updateCartCount();
+        };
+        quantityButtonsDiv.appendChild(removeButton);
         cartItemDiv.appendChild(cartProductDiv);
         cartItemDiv.appendChild(quantityButtonsDiv);
         // cartProductDiv.appendChild(removeButton);
@@ -179,7 +171,7 @@ function updateCartDisplay() {
         return total + item.price * item.quantity;
     }, 0);
 
-    cartTotalElement.innerText = 'Total: ' + cartTotal + ' pesos';
+    cartTotalElement.innerHTML = 'Total: <i class="fa-solid fa-peso-sign"></i>' + cartTotal;
 
     updateCartCount();
     updateCartDisplay();
@@ -191,6 +183,79 @@ function removeFromCart(itemName) {
     });
     updateCartDisplay();
 };
+function proceedToPayment() {
+    var modal = document.getElementById('paymentModal');
+    modal.style.display = 'block';
+
+    // Optionally, you can update the total cost in the modal
+    document.getElementById('totalCost').innerText = 'Total Cost: ' + cartTotal;
+    document.getElementById('change').innerText = '';
+}
+
+// Your existing functions
+function processPayment() {
+    // Get form values
+    var customerName = document.getElementById('customerName').value;
+    var loyaltyCardNumber = document.getElementById('loyaltyCardNumber').value;
+    var totalPayment = parseFloat(document.getElementById('totalPayment').value);
+
+    // Validate total payment
+    if (isNaN(totalPayment) || totalPayment < cartTotal) {
+        alert("Invalid total payment. Please enter a valid amount.");
+        return;
+    }
+
+    // Calculate change
+    var change = totalPayment - cartTotal;
+
+    // Clear cart items
+    cartItems = [];
+
+    // Update cart display
+    updateCartDisplay();
+
+    // Update modal content
+    document.getElementById('totalCost').innerText = 'Total Cost: ' + cartTotal;
+
+    // Optionally, you can perform additional processing or submit the form data to a server here
+
+    // Generate receipt content
+    var receiptContent = generateReceipt(customerName, loyaltyCardNumber, cartTotal, totalPayment, change);
+
+    // Display the receipt in a new window or modal
+    showReceipt(receiptContent);
+
+    // Close payment modal
+    closePaymentModal();
+}
+
+function showReceipt(content) {
+    // You can choose how to display the receipt, e.g., in a new window or a modal
+    // For simplicity, let's open a new window
+    var receiptWindow = window.open('', '_blank');
+    receiptWindow.document.write(content);
+    receiptWindow.document.close();
+}
+
+
+function closePaymentModal() {
+    var modal = document.getElementById('paymentModal');
+    modal.style.display = 'none';
+}
+
+function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPayment, change) {
+    var receiptContent = `
+        <h2>Receipt</h2>
+        <p><strong>Customer Name:</strong> ${customerName}</p>
+        <p><strong>Loyalty Card Number:</strong> ${loyaltyCardNumber}</p>
+        <p><strong>Total Cost:</strong> ${totalCost}</p>
+        <p><strong>Total Payment:</strong> ${totalPayment}</p>
+        <p><strong>Change:</strong> ${change}</p>
+    `;
+
+    return receiptContent;
+}
+
 
 // Hover sound effect script
 var hoverSound = new Audio('assets/Sound/button-sound-effect.mp3');

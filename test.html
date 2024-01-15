@@ -4,32 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <title>Your Page Title</title>
 </head>
 <body>
-    <!-- Your carousel code goes here -->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/img/2-way-alarm.jpeg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/Apr seat cover.jpeg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/Bolts.jpeg" class="d-block w-100" alt="...">
+    <!-- Modal HTML -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <span class="close" onclick="closePaymentModal()">&times;</span>
+                <h2>Payment Details</h2>
+                <form id="paymentForm">
+                    <label for="customerName">Customer Name:</label>
+                    <input type="text" id="customerName" name="customerName" required>
+
+                    <label for="loyaltyCardNumber">Loyalty Card Number:</label>
+                    <input type="text" id="loyaltyCardNumber" name="loyaltyCardNumber" required>
+
+                    <label for="totalPayment">Total Payment:</label>
+                    <input type="number" id="totalPayment" name="totalPayment" required>
+
+                    <p>Total Cost: <span id="totalCost"></span></p>
+                    <p>Change: <span id="change"></span></p>
+
+                    <button type="button" onclick="processPayment()">Submit Payment</button>
+                </form>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-    
+
+    <script>
+        function processPayment() {
+            // Get form values
+            var customerName = document.getElementById('customerName').value;
+            var loyaltyCardNumber = document.getElementById('loyaltyCardNumber').value;
+            var totalPayment = parseFloat(document.getElementById('totalPayment').value);
+
+            // Validate total payment
+            if (isNaN(totalPayment) || totalPayment < cartTotal) {
+                alert("Invalid total payment. Please enter a valid amount.");
+                return;
+            }
+
+            // Calculate change
+            var change = totalPayment - cartTotal;
+
+            // Set modal content
+            document.getElementById('customerName').innerText = "Customer Name: " + customerName;
+            document.getElementById('loyaltyCardNumber').innerText = "Loyalty Card Number: " + loyaltyCardNumber;
+            document.getElementById('totalPayment').innerText = totalPayment;
+            document.getElementById('change').innerText = change;
+
+            // Optionally, you can perform additional processing or submit the form data to a server here
+
+            // Close modal
+            closePaymentModal();
+        }
+
+        function closePaymentModal() {
+            var modal = document.getElementById('paymentModal');
+            modal.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
