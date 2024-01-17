@@ -3,69 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <title>Your Page Title</title>
+    <title>QR Code Generator</title>
+    <!-- Include QRCode.js library from CDN -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
-    <!-- Modal HTML -->
-    <div id="paymentModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <span class="close" onclick="closePaymentModal()">&times;</span>
-                <h2>Payment Details</h2>
-                <form id="paymentForm">
-                    <label for="customerName">Customer Name:</label>
-                    <input type="text" id="customerName" name="customerName" required>
 
-                    <label for="loyaltyCardNumber">Loyalty Card Number:</label>
-                    <input type="text" id="loyaltyCardNumber" name="loyaltyCardNumber" required>
+<!-- Container for QR Code -->
+<div id="qrcode"></div>
 
-                    <label for="totalPayment">Total Payment:</label>
-                    <input type="number" id="totalPayment" name="totalPayment" required>
+<!-- Your existing scripts -->
 
-                    <p>Total Cost: <span id="totalCost"></span></p>
-                    <p>Change: <span id="change"></span></p>
+<script>
+    // Function to generate a unique QR code
+    function generateUniqueQRCode() {
+        // Generate a unique identifier (you can use your own logic here)
+        var uniqueIdentifier = generateUniqueIdentifier();
 
-                    <button type="button" onclick="processPayment()">Submit Payment</button>
-                </form>
-            </div>
-        </div>
-    </div>
+        // Combine with a static base
+        var qrCodeData = "https://example.com/qrcodes/" + uniqueIdentifier;
 
-    <script>
-        function processPayment() {
-            // Get form values
-            var customerName = document.getElementById('customerName').value;
-            var loyaltyCardNumber = document.getElementById('loyaltyCardNumber').value;
-            var totalPayment = parseFloat(document.getElementById('totalPayment').value);
+        // Display QR code
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: qrCodeData,
+            width: 128,
+            height: 128
+        });
+    }
 
-            // Validate total payment
-            if (isNaN(totalPayment) || totalPayment < cartTotal) {
-                alert("Invalid total payment. Please enter a valid amount.");
-                return;
-            }
+    // Function to generate a unique identifier (replace this with your actual logic)
+    function generateUniqueIdentifier() {
+        // Use a timestamp or any other method to create a unique identifier
+        return Date.now().toString();
+    }
 
-            // Calculate change
-            var change = totalPayment - cartTotal;
+    // Example: Call the function to generate a unique QR code
+    generateUniqueQRCode();
+</script>
 
-            // Set modal content
-            document.getElementById('customerName').innerText = "Customer Name: " + customerName;
-            document.getElementById('loyaltyCardNumber').innerText = "Loyalty Card Number: " + loyaltyCardNumber;
-            document.getElementById('totalPayment').innerText = totalPayment;
-            document.getElementById('change').innerText = change;
-
-            // Optionally, you can perform additional processing or submit the form data to a server here
-
-            // Close modal
-            closePaymentModal();
-        }
-
-        function closePaymentModal() {
-            var modal = document.getElementById('paymentModal');
-            modal.style.display = 'none';
-        }
-    </script>
 </body>
 </html>

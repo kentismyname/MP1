@@ -242,6 +242,11 @@ function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPaymen
     // Generate a unique transaction ID for the QR code (replace this with your actual logic)
     var transactionId = generateUniqueTransactionId();
 
+    // Get current date and time
+    var currentDate = new Date();
+    var formattedDate = currentDate.toLocaleDateString();
+    var formattedTime = currentDate.toLocaleTimeString();
+
     var receiptContent = `
         <div style="border: 2px solid #000; border-radius: 10px; padding: 20px; max-width: 400px; margin: 0 auto; background-color: #fff; color: #000; text-align: left; font-family: 'Arial', sans-serif;">
         <div style="margin-top: 20px; text-align: center;">
@@ -253,6 +258,7 @@ function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPaymen
             <p style="margin-bottom: 8px;"><strong>Total Cost:</strong> <span style="color: #000; font-weight: bold;">${totalCost}</span></p>
             <p style="margin-bottom: 8px;"><strong>Total Payment:</strong> <span style="color: #000; font-weight: bold;">${totalPayment}</span></p>
             <p style="margin-bottom: 15px;"><strong>Change:</strong> <span style="color: #000; font-weight: bold;">${change}</span></p>
+            <p style="margin-bottom: 8px;">${formattedDate} - ${formattedTime}</p>
             <h4 style="margin-top: 15px; color: #000; font-size: 20px; font-weight: bold; text-align: center;">Products</h4>
     `;
 
@@ -276,6 +282,7 @@ function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPaymen
 
     return receiptContent;
 }
+
 
 
 
