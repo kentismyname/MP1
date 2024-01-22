@@ -42,19 +42,19 @@
         <sidenav class="container-fluid col-3 bg-warning">
             <h1>Categories</h1>
             <ul class="list-group">
-                <li class="list-group-item tab-links active-link" onclick="opentab('accesories')">Accesories</li>
-                <li class="list-group-item tab-links" onclick="opentab('Tires-and-Interiors')">Tires And Interiors</li>
-                <li class="list-group-item tab-links" onclick="opentab('Oils')">Oils & Fluids</li>
-                <li class="list-group-item tab-links" onclick="opentab('Seat-covers')">Seat Covers</li>
-                <li class="list-group-item tab-links" onclick="opentab('Hand-Grips')">Hand Grips</li>
-                <li class="list-group-item tab-links" onclick="opentab('Screw-and-nuts')">Screw and Nuts</li>
-                <li class="list-group-item tab-links" onclick="opentab('Mags-and-Rim-sets')">Mags & Rim sets</li>
-                <li class="list-group-item tab-links" onclick="opentab('Bulbs')">Bulbs</li>
-                <li class="list-group-item tab-links" onclick="opentab('Machine-parts')">Machine Parts</li>
-                <li class="list-group-item tab-links" onclick="opentab('Pipes')">Pipes</li>
-                <li class="list-group-item tab-links" onclick="opentab('Throtle-Cables')">Throtle Cables</li>
-                <li class="list-group-item tab-links" onclick="opentab('Break-cables')">Break Cables</li>
-                <li class="list-group-item tab-links" onclick="opentab('Break-shoe')">Break Shoes</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links active-link" onclick="opentab('accesories')">Accesories</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Tires-and-Interiors')">Tires And Interiors</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Oils')">Oils & Fluids</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Seat-covers')">Seat Covers</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Hand-Grips')">Hand Grips</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Screw-and-nuts')">Screw and Nuts</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Mags-and-Rim-sets')">Mags & Rim sets</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Bulbs')">Bulbs</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Machine-parts')">Machine Parts</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Pipes')">Pipes</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Throtle-Cables')">Throtle Cables</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Break-cables')">Break Cables</li>
+                <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Break-shoe')">Break Shoes</li>
             </ul>
         </sidenav>
         <main class="container-fluid col-8 p-4">
@@ -1539,20 +1539,14 @@
             var header = document.getElementById('main-header');
     
             window.onscroll = function () {
-                // Get the current scroll position
                 var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
-    
-                // Set the opacity based on the scroll position
-                var opacity = 1 - (scrollPos / 150); // Adjust 200 based on when you want the fading to start
-    
-                // Set the opacity of the header
+                var opacity = 1 - (scrollPos / 150);
                 header.style.opacity = opacity;
     
-                // If the opacity is 0 or less, set display to "none"
                 if (opacity <= 0) {
                     header.style.display = 'none';
                 } else {
-                    header.style.display = 'block'; // Adjust this if your header has a different display value
+                    header.style.display = 'block'; 
                 }
             };
         });
@@ -1564,14 +1558,8 @@
         var container = button.closest('.Product-container');
         var quantityElement = container.querySelector('.quantity');
         var currentQuantity = parseInt(quantityElement.innerText);
-
-        // Update the quantity by the specified change
         var newQuantity = currentQuantity + change;
-
-        // Ensure the quantity does not go below 0
         newQuantity = Math.max(0, newQuantity);
-
-        // Update the quantity text
         quantityElement.innerText = newQuantity + " pcs";
     }
 </script>
@@ -1583,6 +1571,14 @@
             tablink.classList.remove("active-link");
         }
         event.currentTarget.classList.add("active-link");
+    }
+
+        // Hover sound effect script
+    var hoverSound = new Audio('assets/Sound/button-sound-effect.mp3');
+    hoverSound.playbackRate = 7;
+
+    function playHoverSound() {
+        hoverSound.play();
     }
 </script>
     <script src="https://cdn.jsdelivr.net/npm/less" ></script>
