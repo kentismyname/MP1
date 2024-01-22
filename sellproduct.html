@@ -12,28 +12,36 @@
 </head>
 <body>
     <header id="main-header" class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12 col-lg-2"><img class="logo" src="assets/img/Kenneth-logo.png"></div>
-            <div class="nav-links col-sm-10">
-                <ul class="row">
-                    <li class="col col-sm-1"><a href="index.html"><i class="fa-solid fa-house"></i>Home</a></li>
-                    <li class="col col-sm-1"><a href="sellproduct.html" class="sell"><i class="fa-solid fa-bag-shopping"></i>Sell</a></li>
-                    <li class="col col-sm-1"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i>Inventory</a></li>
-                    <li class="col col-sm-1"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i>Sales History</a></li>
-                    <div class="cart-icon" id="cart-icon" onclick="openmenu()"><i class="fa-solid fa-cart-shopping"><span id="cart-count">⁰</span></i></div>
-                    <form class="d-flex col-lg-2 col-sm-10 col-md-5 col-9">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <!-- <a class="col" href="#"><i class="fa-solid fa-user"></i></a> -->
-                </ul>
-            </div>
-        </div>
+      <div class="row">
+          <div class="col-12 col-lg-2 text-center">
+              <img class="logo img-fluid" src="assets/img/Kenneth-logo.png"></div>
+          <div class="nav-links col-lg-10 col-12 ">
+              <ul class="row">
+                  <li class="col-2"><a href="index.html" ><i class="fa-solid fa-house"></i>Home</a></li>
+                  <li class="col-2"><a href="sellproduct.html" class="sell"><i class="fa-solid fa-bag-shopping"></i>Sell</a></li>
+                  <li class="col-2"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i>Inventory</a></li>
+                  <li class="col-2"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i>History</a></li>
+                  <div class="cart-icon" id="cart-icon" onclick="openmenu()"><i class="fa-solid fa-cart-shopping"><span id="cart-count"></span></i></div>
+                  <form class="d-flex col-sm-10 col-xl-3 px-4">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                      <div class="dropdown col-1">
+                          <button class="btn dropdown-toggle" type="button" id="userDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                              <a class="" href="#"><i class="fa-solid fa-user"></i></a>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="userDrop">
+                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                          </ul>
+                      </div>
+                  </form>
+              </ul>
+          </div>
+      </div>
     </header>
     <div class="spacer"></div>
     <nav>
         <div id="sidemenu" class="cart-container">
-                <div id="cartContainer">
+                <div id="cartContainer"> 
                     <h2>Shopping Cart</h2>
                     <div id="cartContent"></div>
                     <div id="payment-here">
@@ -41,7 +49,6 @@
                         <button id="payNowBtn" onclick="proceedToPayment()">Pay Now</button>
                     </div>
                 </div>
-                <!-- <i class="fas fa-times" onclick="closemenu()"> -->
                 <i class="fas fa-solid fa-x" onclick="closemenu()"></i>
         </div>
     </nav>
@@ -72,12 +79,11 @@
     </div>
     <div id="receiptContainer">
         <div id="receiptContent"></div>
-        <!-- <button onclick="closeReceipt()">Close Receipt</button> -->
     </div>
     
     <section class="row mt-3">
-        <sidenav class="container-fluid col-3 bg-warning">
-            <h1>Categories</h1>
+        <sidenav class="container-fluid col-4 col-sm-2 bg-warning sideNav">
+            <h1>Categories</h1> 
             <ul class="list-group">
                 <li onmouseover="playHoverSound()" class="list-group-item tab-links active-link" onclick="opentab('accesories')">Accesories</li>
                 <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Tires-and-Interiors')">Tires And Interiors</li>
@@ -91,10 +97,9 @@
                 <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Pipes')">Pipes</li>
                 <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Carb')">Carb</li>
                 <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Break-cables')">Break Cables, shoe & Rod</li>
-                <!-- <li onmouseover="playHoverSound()" class="list-group-item tab-links" onclick="opentab('Break-shoe')">None</li> -->
             </ul>
         </sidenav>
-        <main class="container-fluid col-8 p-4">
+        <main class="container-fluid col-7 col-sm-9 p-4">
             <div class="tab-contents active-tab" id="accesories">
                 <div class="parent-container">
                     <div class="Product-container container1">
@@ -119,12 +124,12 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Tow Strap</h3>
+                        <h3 class="product-name">Tow Strap</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>50</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Tow Strap', 50, 'assets/img/Tow Strap.jpeg')">
                             <span>Add to cart</span>
                             <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g ></g> <g id="cart"></g> </svg>
-                          </button>
+                        </button>
                     </div>
                     <div class="Product-container container2">
                         <div id="crossbars" class="carousel slide">
@@ -148,7 +153,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Crossbar Bracket</h3>
+                        <h3 class="product-name">Crossbar Bracket</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>120</p>
                         <button class="button mb-2 add-to-cart-btn"  onclick="addToCart('Crossbar Bracket', 120,'assets/img/Cross-bar.jpeg')">
                             <span>Add to cart</span>
@@ -177,7 +182,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>3 Way Alarm</h3>
+                        <h3 class="product-name">3 Way Alarm</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>550</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('3 Way Alarm',550,'assets/img/2-way-alarm.jpeg')">
                             <span>Add to cart</span>
@@ -206,7 +211,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Phone Holder</h3>
+                        <h3 class="product-name">Phone Holder</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>70</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Phone Holder', 70, 'assets/img/phone-holder.jpeg')">
                             <span>Add to cart</span>
@@ -235,7 +240,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Key Cover</h3>
+                        <h3 class="product-name">Key Cover</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>186</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Key Cover', 186, 'assets/img/Modified Key Cover.jpeg')">
                             <span>Add to cart</span>
@@ -264,7 +269,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Motor RainCoat</h3>
+                        <h3 class="product-name">Motor RainCoat</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>150</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Motor RainCoat',150, 'assets/img/motor-raincoat.jpeg')">
                             <span>Add to cart</span>
@@ -293,7 +298,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Helmet Hook</h3>
+                        <h3 class="product-name">Helmet Hook</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>85</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Helmet Hook',85,'assets/img/Helmet-hook.jpeg')">
                             <span>Add to cart</span>
@@ -337,7 +342,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Lever Grip Rubber</h3>
+                        <h3 class="product-name">Lever Grip Rubber</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>45</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Lever Grip Rubber', 45, 'assets/img/Lever-grip.jpeg')">
                             <span>Add to cart</span>
@@ -369,7 +374,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Volt Meter</h3>
+                        <h3 class="product-name">Volt Meter</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>120</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Volt Meter',120, 'assets/img/Volt-meter.jpeg')">
                             <span>Add to cart</span>
@@ -398,7 +403,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Music Rapid Relay</h3>
+                        <h3 class="product-name">Music Rapid Relay</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>550</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Music Rapid Relay' , 550, 'assets/img/music-rapid-relay.jpeg')">
                             <span>Add to cart</span>
@@ -436,7 +441,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Flat Bar Extension</h3>
+                        <h3 class="product-name">Flat Bar Extension</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>50</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Flat Bar Extension',50, 'assets/img/Flatbar.jpeg')">
                             <span>Add to cart</span>
@@ -468,7 +473,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <h3>Pia Horn</h3>
+                        <h3 class="product-name">Pia Horn</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>500</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Pia Horn',500, 'assets/img/Piahorn.jpeg')">
                             <span>Add to cart</span>
@@ -498,7 +503,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Falcon Tire: 45/90-17</h3>
+                        <h3 class="product-name">Falcon Tire: 45/90-17</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>720</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Falcon Tire: 45/90-17', 720, 'assets/img/falcon-tire.jpeg')">
                             <span>Add to cart</span>
@@ -524,7 +529,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Falcon Tire: 60/80-17</h3>
+                        <h3 class="product-name">Falcon Tire: 60/80-17</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>950</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Falcon Tire: 60/80-17', 950, 'assets/img/falcontire60by80.jpeg')">
                             <span>Add to cart</span>
@@ -576,7 +581,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Eagle 70/90-14</h3>
+                        <h3 class="product-name">Eagle 70/90-14</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>750</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Eagle 70/90-14',750, 'assets/img/Eagletire70by90.jpeg')">
                             <span>Add to cart</span>
@@ -634,7 +639,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Vee Interior 2.00/2.25-17</h3>
+                        <h3 class="product-name">Vee Interior 2.00/2.25-17</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>200</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Vee Interior 2.00/2.25-17',200,'assets/img/Veerubbertubetire2by2.25.jpeg')">
                             <span>Add to cart</span>
@@ -643,7 +648,7 @@
                     </div>
                     <div class="Product-container container7">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>Not Available</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>0</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -652,7 +657,7 @@
                     </div>
                     <div class="Product-container container8">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>Not Available</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>0</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -661,7 +666,7 @@
                     </div>
                     <div class="Product-container container9">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>Not Available</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>0</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -670,7 +675,7 @@
                     </div>
                     <div class="Product-container container10">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>Not Available</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>0</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -679,7 +684,7 @@
                     </div>
                     <div class="Product-container container11">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>Not Available</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>0</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -688,7 +693,7 @@
                     </div>
                     <div class="Product-container container12">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>Not Available</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>0</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -701,7 +706,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Honda-oil.jpeg">
-                        <h3>Honda Premium</h3>
+                        <h3 class="product-name">Honda Premium</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>150</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Honda Premium', 150, 'assets/img/Honda-oil.jpeg')">
                             <span>Add to cart</span>
@@ -711,7 +716,7 @@
                     </div>
                     <div class="Product-container container2">
                         <img src="assets/img/Shell-oil.jpeg">
-                        <h3>Shell Advance</h3>
+                        <h3 class="product-name">Shell Advance</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>180</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Shell Advance', 180, 'assets/img/Shell-oil.jpeg')">
                             <span>Add to cart</span>
@@ -750,7 +755,7 @@
                     </div>
                     <div class="Product-container container4">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -759,7 +764,7 @@
                     </div>
                     <div class="Product-container container5">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -768,7 +773,7 @@
                     </div>
                     <div class="Product-container container6">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -777,7 +782,7 @@
                     </div>
                     <div class="Product-container container7">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -786,7 +791,7 @@
                     </div>
                     <div class="Product-container container8">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -795,7 +800,7 @@
                     </div>
                     <div class="Product-container container9">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -804,7 +809,7 @@
                     </div>
                     <div class="Product-container container10">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -813,7 +818,7 @@
                     </div>
                     <div class="Product-container container11">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -822,7 +827,7 @@
                     </div>
                     <div class="Product-container container12">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -835,7 +840,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Apr seat cover.jpeg">
-                        <h3>APR</h3>
+                        <h3 class="product-name">APR</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>500</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('APR Seat Cover', 500, 'assets/img/Apr seat cover.jpeg')">
                             <span>Add to cart</span>
@@ -870,7 +875,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>JRP</h3>
+                        <h3 class="product-name">JRP</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>250</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('JRP Seat Cover',250, 'assets/img/jrpseatcover.jpeg')">
                             <span>Add to cart</span>
@@ -902,7 +907,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Kawasaki</h3>
+                        <h3 class="product-name">Kawasaki</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>120</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Kawasaki Seat Cover',120, 'assets/img/kawasakiseatcover.jpeg')">
                             <span>Add to cart</span>
@@ -934,7 +939,7 @@
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
-                        <h3>Honda</h3>
+                        <h3 class="product-name">Honda</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>250</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Honda Seat Cover',250, 'assets/img/Hondaseatcover.jpeg')">
                             <span>Add to cart</span>
@@ -943,7 +948,7 @@
                     </div>
                     <div class="Product-container container5">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -952,7 +957,7 @@
                     </div>
                     <div class="Product-container container6">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -961,7 +966,7 @@
                     </div>
                     <div class="Product-container container7">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -970,7 +975,7 @@
                     </div>
                     <div class="Product-container container8">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -979,7 +984,7 @@
                     </div>
                     <div class="Product-container container9">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -988,7 +993,7 @@
                     </div>
                     <div class="Product-container container10">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -997,7 +1002,7 @@
                     </div>
                     <div class="Product-container container11">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1006,7 +1011,7 @@
                     </div>
                     <div class="Product-container container12">
                         <img src="assets/img/out-of-stock.jpg">
-                        <h3>This is a sample</h3>
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1019,7 +1024,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/jrp handgrip.jpeg">
-                        <h3>JRP Hand-Grips</h3>
+                        <h3 class="product-name">JRP Hand-Grips</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>200</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('JRP Hand-Grips', 200, 'assets/img/jrp handgrip.jpeg')">
                             <span>Add to cart</span>
@@ -1028,7 +1033,7 @@
                     </div>
                     <div class="Product-container container2">
                         <img src="assets/img/Domino set.jpeg">
-                        <h3>Domino Set Grip/Cable</h3>
+                        <h3 class="product-name">Domino Set Grip/Cable</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>250</p>
                         <button class="button mb-2  add-to-cart-btn" onclick="addToCart('Domino Set Grip/Cable', 250,'assets/img/Domino set.jpeg')"> 
                             <span>Add to cart</span>
@@ -1036,8 +1041,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                        <img src="assets/img/out-of-stock.jpg">
+                        <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1045,8 +1050,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1054,8 +1059,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1063,8 +1068,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1072,8 +1077,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1081,8 +1086,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1090,8 +1095,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1099,8 +1104,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1108,8 +1113,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1117,8 +1122,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1131,7 +1136,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Bolts.jpeg">
-                        <h3>Gold Bolts&Nuts</h3>
+                        <h3 class="product-name">Gold Bolts&Nuts</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>120</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Gold Bolts&Nuts', 120,'assets/img/Bolts.jpeg')">
                             <span>Add to cart</span>
@@ -1139,8 +1144,8 @@
                           </button>
                     </div>
                     <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1148,8 +1153,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1157,8 +1162,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1166,8 +1171,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1175,8 +1180,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1184,8 +1189,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1193,8 +1198,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1202,8 +1207,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1211,8 +1216,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1220,8 +1225,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1229,8 +1234,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1243,7 +1248,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Osaki rim-set.jpeg">
-                        <h3>Osaki Rim-Set</h3>
+                        <h3 class="product-name">Osaki Rim-Set</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>1700</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Osaki Rim-Set', 1700,'assets/img/Osaki rim-set.jpeg')">
                             <span>Add to cart</span>
@@ -1251,8 +1256,8 @@
                           </button>
                     </div>
                     <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1260,8 +1265,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1269,8 +1274,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1278,8 +1283,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1287,8 +1292,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1296,8 +1301,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1305,8 +1310,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1314,8 +1319,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1323,8 +1328,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1332,8 +1337,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1341,8 +1346,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1355,7 +1360,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Osram Headlight.jpeg">
-                        <h3>Osram Headlight</h3>
+                        <h3 class="product-name">Osram Headlight</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>120</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Osram Headlight', 120,'assets/img/Osram Headlight.jpeg')">
                             <span>Add to cart</span>
@@ -1363,8 +1368,8 @@
                           </button>
                     </div>
                     <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1372,8 +1377,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1381,8 +1386,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1390,8 +1395,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1399,8 +1404,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1408,8 +1413,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1417,8 +1422,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1426,8 +1431,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1435,8 +1440,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1444,8 +1449,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1453,8 +1458,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1467,7 +1472,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Rocker Arm Barako.jpeg">
-                        <h3>Rocker Arm-Barako</h3>
+                        <h3 class="product-name">Rocker Arm-Barako</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>450</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Rocker Arm-Barako', 450,'assets/img/Rocker Arm Barako.jpeg')">
                             <span>Add to cart</span>
@@ -1476,7 +1481,7 @@
                     </div>
                     <div class="Product-container container2">
                         <img src="assets/img/Piston.jpeg">
-                        <h3>Piston</h3>
+                        <h3 class="product-name">Piston</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>950</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Piston', 950, 'assets/img/Piston.jpeg')">
                             <span>Add to cart</span>
@@ -1484,8 +1489,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1493,8 +1498,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1502,8 +1507,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1511,8 +1516,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1520,8 +1525,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1529,8 +1534,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1538,8 +1543,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1547,8 +1552,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1556,8 +1561,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1565,8 +1570,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1579,7 +1584,7 @@
                 <div class="parent-container">
                 <div class="Product-container container1">
                     <img src="assets/img/Stock Pipe barako.jpeg">
-                    <h3>Stock Pipe-Barako</h3>
+                    <h3 class="product-name">Stock Pipe-Barako</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>1120</p>
                     <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Stock Pipe-Barako', 1120, 'assets/img/Stock Pipe barako.png')">
                         <span>Add to cart</span>
@@ -1588,7 +1593,7 @@
                 </div>
                 <div class="Product-container container2">
                     <img src="assets/img/Daeng Sai4 Wave-Xrm.jpeg">
-                    <h3>Daeng Sai4 Wave/Xrm</h3>
+                    <h3 class="product-name">Daeng Sai4 Wave/Xrm</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>1120</p>
                     <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Daeng Sai4 Wave/Xrm', 1120, 'assets/img/Daeng Sai4 Wave-Xrm.jpeg')">
                         <span>Add to cart</span>
@@ -1596,8 +1601,8 @@
                       </button>
                 </div>
                 <div class="Product-container container3">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1605,8 +1610,8 @@
                       </button>
                 </div>
                 <div class="Product-container container4">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1614,8 +1619,8 @@
                       </button>
                 </div>
                 <div class="Product-container container5">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1623,8 +1628,8 @@
                       </button>
                 </div>
                 <div class="Product-container container6">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1632,8 +1637,8 @@
                       </button>
                 </div>
                 <div class="Product-container container7">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1641,8 +1646,8 @@
                       </button>
                 </div>
                 <div class="Product-container container8">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1650,8 +1655,8 @@
                       </button>
                 </div>
                 <div class="Product-container container9">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1659,8 +1664,8 @@
                       </button>
                 </div>
                 <div class="Product-container container10">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1668,8 +1673,8 @@
                       </button>
                 </div>
                 <div class="Product-container container11">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1677,8 +1682,8 @@
                       </button>
                 </div>
                 <div class="Product-container container12">
-                    <img src="assets/img/SAMPLE.jpg">
-                    <h3>This is a sample</h3>
+                  <img src="assets/img/out-of-stock.jpg">
+                  <h3 class="product-name">Not Available</h3>
                     <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                     <button class="button mb-2">
                         <span>Add to cart</span>
@@ -1690,7 +1695,7 @@
                 <div class="parent-container">
                     <div class="Product-container container1">
                         <img src="assets/img/Keihin carb.jpeg">
-                        <h3>Keihin Carb</h3>
+                        <h3 class="product-name">Keihin Carb</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>380</p>
                         <button class="button mb-2 add-to-cart-btn" onclick="addToCart('Keihin Carb',380,'assets/img/Keihin carb.jpeg')">
                             <span>Add to cart</span>
@@ -1698,8 +1703,8 @@
                           </button>
                     </div>
                     <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1707,8 +1712,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1716,8 +1721,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1725,8 +1730,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1734,8 +1739,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1743,8 +1748,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1752,8 +1757,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1761,8 +1766,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1770,8 +1775,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1779,8 +1784,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1788,8 +1793,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1810,8 +1815,8 @@
                           </button>
                     </div>
                     <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3 class="product-name">This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1819,8 +1824,8 @@
                           </button>
                     </div>
                     <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3 class="product-name">This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1828,8 +1833,8 @@
                           </button>
                     </div>
                     <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1837,8 +1842,8 @@
                           </button>
                     </div>
                     <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1846,8 +1851,8 @@
                           </button>
                     </div>
                     <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1855,8 +1860,8 @@
                           </button>
                     </div>
                     <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1864,8 +1869,8 @@
                           </button>
                     </div>
                     <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1873,8 +1878,8 @@
                           </button>
                     </div>
                     <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1882,8 +1887,8 @@
                           </button>
                     </div>
                     <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1891,8 +1896,8 @@
                           </button>
                     </div>
                     <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1900,8 +1905,8 @@
                           </button>
                     </div>
                     <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
+                      <img src="assets/img/out-of-stock.jpg">
+                      <h3 class="product-name">Not Available</h3>
                         <p><i class="fa-solid fa-peso-sign"></i>99999</p>
                         <button class="button mb-2">
                             <span>Add to cart</span>
@@ -1910,118 +1915,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="tab-contents" id="Break-shoe">
-                <div class="parent-container">
-                    <div class="Product-container container1">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container2">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container3">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container4">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container5">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container6">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container7">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container8">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container9">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container10">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container11">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                    <div class="Product-container container12">
-                        <img src="assets/img/SAMPLE.jpg">
-                        <h3>This is a sample</h3>
-                        <p><i class="fa-solid fa-peso-sign"></i>99999</p>
-                        <button class="button mb-2">
-                            <span>Add to cart</span>
-                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <defs>  </defs> <g id="cart"> <circle r="1.91" cy="20.59" cx="10.07" class="cls-1"></circle> <circle r="1.91" cy="20.59" cx="18.66" class="cls-1"></circle> <path d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10" class="cls-1"></path> <polyline points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91" class="cls-1"></polyline> </g> </g></svg>
-                          </button>
-                    </div>
-                </div>
-            </div> -->
         </main>
     </section>
     <div class="spacer"></div>

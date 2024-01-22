@@ -23,12 +23,12 @@
             }
             .nav-links{
                 // margin: 60px 0 0 0px;
-                padding: 40px 0 0 0;                
+                padding: 40px 0 0 40px;     
                 ul{
                     list-style: none;
                     li{
                         display: inline-block;
-                        // margin-right: 15px;
+                        margin-left: 15px;
                         min-width: 150px;
                         list-style: none;
                         a{
@@ -50,7 +50,7 @@
                                 height: 4px; /* Adjust this value for the desired width */
                                 background-color: var(--main-color);
                                 position: absolute;
-                                bottom: 1;
+                                // bottom: 1;
                                 left: 0;
                             }
                         }
@@ -89,7 +89,7 @@
             #date-totalsales{
                 background-color: #EEF5FF;
                 .time-date{
-                    font-size: 150%;
+                    font-size: 100%;
                     background-color: var(--secondary-color);
                     // text-align: center;
                     height: 35px;
@@ -112,9 +112,9 @@
                 .sales{
                     margin: 20px auto;
                     background-color: #86B6F6;
-                    width: 50%;
+                    width: 80%;
                     border-radius: 27px;
-                    font-size: 200%;
+                    font-size: 150%;
                 }
                 
             }
@@ -123,9 +123,6 @@
                 height: 50%;
                 margin: 0 0 0 150px;
                 display: none;
-                img{
-                    width: 100%;
-                }
             }
         }   
         footer{
@@ -149,7 +146,7 @@
 }
 .spacer-footer{
     clear: both;
-    height: 160px;
+    height: 124px;
 }
 .blabla{
     margin-top: 20px;
@@ -162,21 +159,23 @@ li{
 }
 
 
-@media (max-width: 780px) {
+@media (max-width: 1000px) {
     *{
-        font-size: 80%;
+        // font-size: 80%;
         body {
             header {
                 // background-color: #00f853;
                 .nav-links{
+                    padding: 40px 0 0 40px;
+                    margin-left: -20px;
                     ul{
                         li{
                             visibility:hidden ;
-                            min-width: 85px;
+                            min-width: 50px;
                         }
                         i{
                             visibility: visible;
-                            margin-left: 10px;
+                            // margin-left: 10px;
                         }
                         .fa-user{
                             margin: 0;
@@ -184,34 +183,38 @@ li{
                         .dropdown-item{
                             visibility: visible;
                         }
+                        form{
+                            margin: -5px 0 0 -20px;
+                        }
                     } 
 
                 }
                 .logo {
-                    width: 10%;
-                    min-width: 100px;
-                    margin: 20px 0 0px 0px;
+                    width: 30%;
+                    margin: 0px 0 -30px 0px;
                 }
             }
             main{
+                // .slides{
+                //     display: block;
+                // }
                 .carousel-item{
                     margin: 0 0 0 10px;
                     display: none;
-                    img{
-                        width: 100%;
-                    }
+                    width: 90%;
+                    height: 90%;
                 }
             }
-            #HomeProductSlide2{
-                // display: none;
+            footer{
+                margin-top: -15%;
             }
         }
     }
     
 }
+// @media (min-width: 1001px) and (max-width: 1399px){
+//     #main-header{
+//         padding-left:100px ;
+//     }
 
-@media (min-width: 576px) and (max-width: 992px){
-    .nav-links{
-        margin-left: 100px;
-    }
-}
+// }

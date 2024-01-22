@@ -1,4 +1,4 @@
-// Your add to cart animation script
+//add to cart animation script
 $(document).ready(function () {
     $(".add-to-cart-btn").click(function () {
         var buttonPosition = $(this).offset();
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.onscroll = function () {
         var scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
-        var opacity = 1 - (scrollPos / 150);
+        var opacity = 1 - (scrollPos /20);
 
         header.style.opacity = opacity;
 
@@ -163,7 +163,6 @@ function updateCartDisplay() {
         quantityButtonsDiv.appendChild(removeButton);
         cartItemDiv.appendChild(cartProductDiv);
         cartItemDiv.appendChild(quantityButtonsDiv);
-        // cartProductDiv.appendChild(removeButton);
         cartContent.appendChild(cartItemDiv);
     });
 
@@ -187,12 +186,10 @@ function proceedToPayment() {
     var modal = document.getElementById('paymentModal');
     modal.style.display = 'block';
 
-    // Optionally, you can update the total cost in the modal
+    // To update the total cost in the modal
     document.getElementById('totalCost').innerText = 'Total Cost: ' + cartTotal;
     document.getElementById('change').innerText = '';
 }
-
-// Your existing functions
 function processPayment() {
     // Get form values
     var customerName = document.getElementById('customerName').value;
@@ -204,49 +201,27 @@ function processPayment() {
         alert("Invalid total payment. Please enter a valid amount.");
         return;
     }
-
-    // Calculate change
     var change = totalPayment - cartTotal;
-    
-
-    // Update modal content
     document.getElementById('totalCost').innerText = 'Total Cost: ' + cartTotal;
-
-    // Optionally, you can perform additional processing or submit the form data to a server here
-
     // Generate receipt content
     var receiptContent = generateReceipt(customerName, loyaltyCardNumber, cartTotal, totalPayment, change);
-
-    // Display the receipt in a new window or modal
     showReceipt(receiptContent);
-
-    // Close payment modal
     closePaymentModal();
 }
-
 function showReceipt(content) {
-    // You can choose how to display the receipt, e.g., in a new window or a modal
-    // For simplicity, let's open a new window
     var receiptWindow = window.open('', '_blank');
     receiptWindow.document.write(content);
     receiptWindow.document.close();
 }
-
-
 function closePaymentModal() {
     var modal = document.getElementById('paymentModal');
     modal.style.display = 'none';
 }
-
 function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPayment, change) {
-    // Generate a unique transaction ID for the QR code (replace this with your actual logic)
-    var transactionId = generateUniqueTransactionId();
-
     // Get current date and time
     var currentDate = new Date();
     var formattedDate = currentDate.toLocaleDateString();
     var formattedTime = currentDate.toLocaleTimeString();
-
     var receiptContent = `
         <div style="border: 2px solid #000; border-radius: 10px; padding: 20px; max-width: 400px; margin: 0 auto; background-color: #fff; color: #000; text-align: left; font-family: 'Arial', sans-serif;">
         <div style="margin-top: 20px; text-align: center;">
@@ -259,16 +234,13 @@ function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPaymen
             <p style="margin-bottom: 8px;"><strong>Total Payment:</strong> <span style="color: #000; font-weight: bold;">${totalPayment}</span></p>
             <p style="margin-bottom: 15px;"><strong>Change:</strong> <span style="color: #000; font-weight: bold;">${change}</span></p>
             <p style="margin-bottom: 8px;">${formattedDate} - ${formattedTime}</p>
-            <h4 style="margin-top: 15px; color: #000; font-size: 20px; font-weight: bold; text-align: center;">Products</h4>
+            <h4 style="margin-top: 15px; color: #000; font-size: 20px; font-weight: bold; text-align: center;">Products Purchased</h4>
     `;
-
-    // Include details of each item in the receipt under the "Products" section
     cartItems.forEach(function (item) {
         receiptContent += `
             <p style="color: #000; margin-bottom: 8px;">${item.name} - ${item.quantity} = ${item.price * item.quantity}</p>
         `;
     });
-
     receiptContent += `
             <hr style="border: 1px dashed #000; margin: 20px 0;">
             <p style="font-size: 16px; color: #000; text-align: center;">Thank you for your purchase! We appreciate your trust in Kenneth's Moto Parts Shop and Services. Please come again!</p>
@@ -279,26 +251,8 @@ function generateReceipt(customerName, loyaltyCardNumber, totalCost, totalPaymen
             <p style="font-size: 14px; color: #000; margin-top: 10px; text-align: center;">Scan the QR code for receipt confirmation.</p>
         </div>
     `;
-
     return receiptContent;
 }
-
-
-
-
-
-
-
-
-// Replace this function with your actual logic to generate a unique transaction ID for the QR code
-function generateUniqueTransactionId() {
-    // Implement your logic to generate a unique transaction ID
-    // For simplicity, you can use a timestamp or any other unique identifier
-    return Date.now().toString();
-}
-
-
-
 // Hover sound effect script
 var hoverSound = new Audio('assets/Sound/button-sound-effect.mp3');
 hoverSound.playbackRate = 7;

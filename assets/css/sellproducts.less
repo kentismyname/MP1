@@ -10,6 +10,8 @@
     font-family: 'Times New Roman', Times, serif;
     body::-webkit-scrollbar {
         width: 0.5em;
+    box-sizing: border-box;
+
       }
       
       body::-webkit-scrollbar-thumb {
@@ -26,8 +28,8 @@
             z-index: 2;
             .logo{
                 width: 50%;
-                min-width: 100px;
-                margin:20px 0 0px 85px;
+                min-width: 10%;
+                margin:0px 0 0px 85px;
                 // box-shadow: 7px 5px 8px rgba(0, 0, 0, 0.2);
             }
             .nav-links{
@@ -46,7 +48,6 @@
                             position: relative;
                             overflow: hidden;
                             font-weight: 600;
-                            font-size: 25px;
                             min-width: 10px;
                             &::after {
                                 content: '';
@@ -58,6 +59,9 @@
                                 bottom: 1;
                                 left: 0;
                             }
+                        }
+                        .fa-bag-shopping{
+                            font-size: 30px;
                         }
                     }
                     .cart-icon {
@@ -81,36 +85,32 @@
                         color: black;
                     }
                 }
-            }
         }
         nav .cart-container {
             background: var(--dark-color);
             position: fixed;
             top: 0;
-            // margin-top: 90px;
             right: -850px;
             width: 850px;
-            height: 1000px;
+            height: 1000pxv b;
             padding-top: 50px;
             z-index: 2;
             transition: right 0.5s;
             border-radius: 15px;
-            // display: inline-block;
             #cartContainer{
                 h2{
                     margin: auto;
                     font-weight: bold;
                     border-bottom: solid 2px white;
-                    width: 250px;
-                    padding: 0 20px;
+                    width: 300px;
+                    padding: 0 20px; 
+                    color: var(--primary-color);
                 }
-                // height: 20px;
                 #cartContent{
                     overflow: scroll;
                     height: 700px;
                     .cart-item{
                         display: flex;
-                        /* border: solid 1px var(--dark-color); */
                         margin: 10px auto;
                         background: var(--primary-color);
                         width: 95%;
@@ -123,11 +123,8 @@
                             p{
                                 font-size: 24px;
                                 font-weight: bold;
-                                // display: inline;
-                                // text-align: middle;
                                 margin: auto;
-                            }
-                            
+                            }    
                         }
                         .quantity-buttons{
                             display: flex;
@@ -147,8 +144,7 @@
                                 font-size: 25px;
                                 margin: -5px 0 0 0;
                             
-                            }
-                            
+                            }    
                         }
                     }
                 }
@@ -160,22 +156,19 @@
                 align-items: center;
                 padding: 30px;
             }
-            
             #cartTotal {
                 // margin: auto;
                 font-weight: bold;
                 font-size: 22px;
-                background-color: red; /* You can replace this with your desired color */
+                background-color: red;
                 width: 250px;
                 padding: 10px 10px 10px 30px;
                 border-radius: 10px;
             }
-            
             #cartTotal h2 {
-                color: var(--primary-color); /* You should define --primary-color in your CSS */
+                color: var(--primary-color);
                 margin: 20px;
             }
-            
             #payNowBtn {
                 background-color: greenyellow;
                 height: 50px;
@@ -183,9 +176,8 @@
                 font-size: 24px;
                 font-weight: 600;
             }
-            
             #payNowBtn:hover {
-                background-color: darkgreen; /* Change this to your preferred hover color */
+                background-color: darkgreen;
             }
             .fas{
                 position: absolute;
@@ -205,8 +197,6 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
         }
-    
-        /* Modal Content */
         .modal-content {
            background-color: #fefefe;
             margin: 15% auto;
@@ -268,22 +258,25 @@
         } 
         section{
             sidenav{
-                height: 800px;
+                height: 350%;
+                h1{
+                    font-size: 150%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 5px;
+                }
                 ul{
+                    padding-bottom: 10px;
                     li{
-                        font-size: 20px;
+                        font-size: 100%;
                         transition: .3s ease;
                         cursor: pointer;
                     }
                     li:hover{
                         background: linear-gradient(0deg, rgba(23,107,135,1) 6%, rgba(180,212,255,1) 91%);
-                        font-size: 25px;
+                        // font-size: 120%;
                     }
-                }
-                img {
-                    max-width: 100%;
-                    height: auto;
-                }        
+                } 
             }  
             .tab-contents{
                 display: none;
@@ -293,7 +286,7 @@
             }
             .tab-links.active-link{
                 background: linear-gradient(0deg, rgba(23,107,135,1) 6%, rgba(180,212,255,1) 91%);
-                font-size: 25px;
+                // font-size: 110%;
             }
             main{
                 background: linear-gradient(0deg, rgba(23,107,135,1) 6%, rgba(180,212,255,1) 91%);
@@ -302,10 +295,10 @@
                 border: solid 2px;
                 .parent-container {
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    grid-template-rows: repeat(3, 1fr);
-                    grid-column-gap: 15px;
-                    grid-row-gap: 15px;
+                    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+                    // grid-template-rows: repeat(3, 1fr);
+                    grid-column-gap: 5px;
+                    grid-row-gap:5px;
                     text-align: center;
                     .Product-container{
                         text-align: center;
@@ -314,21 +307,20 @@
                         border-radius: 15px;
                         border: solid 1px;
                         transition: 0.3s ease;
-                        max-width: 290px;
-                        img{
-                            width: 90%;
+                        max-width: 90%;
+                        p{
+                            font-size: 150%;
                         }
-                        .image-container {
-                            overflow: hidden;
-                            position: relative;
-                            width: 90%;
-                        }  
+                        img{
+                            max-width: 90%;
+                        }
                         .product-name{
                             overflow: hidden;
                             white-space: nowrap;
                             text-overflow: ellipsis;
-                            width: 100%;
-                            padding: 0 20px 0 20px;
+                            // width: 100%;
+                            padding:0 20px;
+                            font-size: 150%;
                         }
                         .custom-carousel-control {
                             color: black; 
@@ -342,21 +334,7 @@
                     .Product-container:hover{
                         transform: scale(1.1);
                     }
-                    .container1 { grid-area: 1 / 1 / 2 / 2; }
-                    .container2 { grid-area: 1 / 2 / 2 / 3; }
-                    .container3 { grid-area: 1 / 3 / 2 / 4; }
-                    .container4 { grid-area: 1 / 4 / 2 / 5; }
-                    .container5 { grid-area: 2 / 1 / 3 / 2; }
-                    .container6 { grid-area: 2 / 2 / 3 / 3; }
-                    .container7 { grid-area: 2 / 3 / 3 / 4; }
-                    .container8 { grid-area: 2 / 4 / 3 / 5; }
-                    .container9 { grid-area: 3 / 1 / 4 / 2; }
-                    .container10 { grid-area: 3 / 2 / 4 / 3; }
-                    .container11 { grid-area: 3 / 3 / 4 / 4; }
-                    .container12 { grid-area: 3 / 4 / 4 / 5; }
                 }
-
-                
             }
         }
         footer{
@@ -365,17 +343,18 @@
             padding: 10px 0;
             text-align: center;
             font-family: 'Times New Roman', Times, serif;
-        }
-    } 
+        }    
+    }      
+}
 // ---------ADD Button-------------------------------------------------------------------------------------------
 .button {
-    height: 60px;
-    width: 200px;
+    height: 40px;
+    width: 70%;
     background-color: #132233;
     border: 2px solid rgb(182, 128, 128);
     color: #eee;
     transition: .6s;
-    font-size: 15px;
+    font-size: 70%;
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -394,7 +373,7 @@
     }
   }  
 .button:hover {
-    width: 60px;
+    width: 25%;
     background-color: rgba(51, 34, 51, 0.815);
     box-shadow: 20px 20px 96px #bebebe,-20px -20px 96px #ffffff;
     svg {
@@ -410,4 +389,109 @@
     clear: both;
     height: 160px;
 }
+@media (min-width: 200px) and (max-width: 992px){
+    *{
+        body{
+            header{
+                .nav-links{
+                    padding: 40px 0 0 40px;
+                    margin-left: -30px;
+                    ul{
+                        li{
+                            visibility:hidden ;
+                            min-width: 50px;
+                        }
+                        i{
+                            visibility: visible;
+                        }
+                        .fa-user{
+                            margin: 0;
+                        }
+                        .dropdown-item{
+                            visibility: visible;
+                        }
+                        form{
+                            margin: -5px 0 0 -20px;
+                        }
+                    } 
 
+                }
+                .logo {
+                    width: 30%;
+                    margin: 0px 0 -30px 0px;
+                }
+            }
+            nav{
+                #sidemenu{
+                    #cartContainer{
+                        #cartContent{
+
+                        }
+                    }
+                }
+            }
+            #paymentModal{
+                .modal-dialog{
+                    .modal-content{
+                        h2{
+
+                        }
+                        form{
+                            label{
+
+                            }
+                            input{}
+                            p span{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    section{
+        sidenav{
+            h1{
+                font-size: 120%;
+            }
+            ul{
+                li{
+                    font-size: 100%;
+                }
+            }
+        }
+        main{
+
+            .parent-container{
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+                grid-column-gap: 5px;
+                grid-row-gap:5px;
+                text-align: center;
+                .Product-container{
+
+                    p{
+                        font-size: 80%;
+                    }
+                    .product-name{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        padding:0 20px;
+                        font-size: 100%;
+                    }
+                    img{
+                        width: 70%;
+                        height: 80px;
+                    }
+                }
+            }
+        }
+    }
+    .spacer{
+        clear: both;
+        height: 220px;
+    }
+    .button{
+        font-size: 50% ;
+    }
+}

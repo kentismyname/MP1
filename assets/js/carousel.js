@@ -12,7 +12,7 @@ document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
         clearInterval(intervalId1);
     } else {
-        intervalId1 = setInterval(/* ... */);
+        intervalId1 = setInterval(5000);
     }
 });
 
@@ -30,6 +30,6 @@ document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
         clearInterval(intervalId2);
     } else {
-        intervalId2 = setInterval(/* ... */);
+        intervalId2 = setInterval(5000);
     }
 });

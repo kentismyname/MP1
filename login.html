@@ -4,63 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bb5f008548.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" type="text/css" href="assets/css/login.less">
     <!-- Replace the integrity value with the actual value from the Bootstrap website -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, rgba(180,212,255,1) 0%, rgba(134,182,246,1) 36%, rgba(23,107,135,1) 100%);
-        }
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        .login-container {
-            background-color: #EEF5FF;
-            font-family: Arial, sans-serif;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            width: 80%;
-            max-width: 400px;
-        }
-
-        img {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        input {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        button {
-            width: 100%;
-        }
-    </style>
+    
 </head>
 <body>
-    <main>
+    <main class="container-fluid">
         <div class="login-container">
             <img src="assets/img/kenneth-logo.png" class="img-fluid">
             <form>
-                <div class="mb-3">
+                <div class="mb-3 email">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 email">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" class="form-control" id="Password">
                 </div>
                 <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
             </form>
@@ -69,8 +29,8 @@
 
     <script>
         function validateLogin() {
-            var emailInput = document.getElementById('exampleInputEmail1').value;
-            var passwordInput = document.getElementById('exampleInputPassword1').value;
+            var emailInput = document.getElementById('Email').value;
+            var passwordInput = document.getElementById('Password').value;
 
             if (emailInput === 'jkdalisay123@gmail.com' && passwordInput === '112318') {
                 // alert('Login successful! Redirecting to index.html...');
@@ -79,10 +39,25 @@
                 alert('Invalid email or password. Please try again.');
             }
         }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                validateLogin();
+            }
+        });
     </script>
    
     <!-- Bootstrap JavaScript and jQuery scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!-- Less JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/less"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
