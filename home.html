@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Kenneth">
+    <script src="https://kit.fontawesome.com/bb5f008548.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet/less" type="text/css" href="assets/css/style.less" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="assets/img/favicon.png" type="image/x-icon">
+    <title>POS</title>
+</head>
+<body>
+    <header id="main-header" class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-2 text-center">
+                <img class="logo img-fluid" src="assets/img/Kenneth-logo.png"></div>
+            <div class="nav-links col-lg-10 col-sm-12 col-12">
+                <ul class="row">
+                    <li class="col-2"><a href="home.html" class="home"><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li class="col-2"><a href="sellproduct.html"><i class="fa-solid fa-bag-shopping"></i>Sell</a></li>
+                    <li class="col-2"><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i>Inventory</a></li>
+                    <li class="col-1"><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i>Sales History</a></li>
+                    <form class="d-flex col-sm-12 col-lg-10 col-xl-3">
+                        <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <div class="dropdown col-2">
+                            <button class="btn dropdown-toggle" type="button" id="userDrop" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="" href="#"><i class="fa-solid fa-user"></i></a>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="userDrop">
+                              <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <div id="date-totalsales">
+            <div class="row time-date">
+                <p class="col-6 col-sm-5" id="date"></p>
+                <p class="col-5" id="clock"></p>
+            </div> 
+            <h1 class="sales">Total Sales:  <i class="fa-solid fa-peso-sign"></i>6,534.00</h1>
+        </div>
+        <ul class="row slides">
+            <li class="col-6 blabla">
+                <div id="HomeProductSlide1" class="carousel slide col-12 mx-auto" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/img/alarmhomeslide.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/towstraphomeslide.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/keyheadhomeslide.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="col-6 blabla">
+                <div id="HomeProductSlide2" class="carousel slide col-12 mx-auto" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/img/Apr seat cover.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/Domino set.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/Eagletire70by90(2).jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/Bendix.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/img/Bolts.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </li> 
+        </ul>
+        
+    </main>
+    <div class="spacer-footer"></div>
+    <footer class="container-fluid">© 2024 Kenneth's Moto Parts Shop & Services. All Rights Reserved.</footer>
+    <script src="assets/js/categories.js"></script>
+    <!-- --------------------------------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    <script src="assets/js/clock.js"></script>
+    <!-- ---------------carousel------------------------ -->
+    <script src="assets/js/carousel.js"></script>
+    <!-- ------------------------------------------ -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-FgcZz1gYI2b3s2t3GIcJPclF++RBGB0Pb9hj2hG4L7Jjz17fuymE5H4lTZBZlMhp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
